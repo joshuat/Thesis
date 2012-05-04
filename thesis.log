@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.23)  23 JAN 2012 11:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.6.23)  24 JAN 2012 15:28
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -357,11 +357,8 @@ Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
 (./Latex/Macros/MacroFile1.tex) (./thesis.aux (./0_frontmatter/abstract.aux)
-(./0_frontmatter/acknowledgement.aux) (./1_introduction/introduction.aux
-
-LaTeX Warning: Label `largepotato' multiply defined.
-
-) (./2/aims.aux) (./3/XYZ.aux) (./4/XYZ.aux) (./5/XYZ.aux) (./6/XYZ.aux)
+(./0_frontmatter/acknowledgement.aux) (./1_introduction/introduction.aux)
+(./2/aims.aux) (./3/XYZ.aux) (./4/XYZ.aux) (./5/XYZ.aux) (./6/XYZ.aux)
 (./7/discussion.aux) (./8/materials_methods.aux) (./0_frontmatter/glossary.aux)
 (./9_backmatter/declaration.aux))
 \openout1 = `thesis.aux'.
@@ -416,7 +413,7 @@ LaTeX Info: Redefining \pageref on input line 92.
 Package backref Info: ** backref set up for natbib ** on input line 92.
 \AtBeginShipoutBox=\box53
 
-<0_frontmatter/figures/logo.png, id=67, 301.125pt x 129.48375pt>
+<0_frontmatter/figures/logo.png, id=75, 301.125pt x 129.48375pt>
 File: 0_frontmatter/figures/logo.png Graphic file (type png)
 
 <use 0_frontmatter/figures/logo.png> [1
@@ -498,138 +495,118 @@ l.154 \listoffigures
 
  (./1_introduction/introduction.tex
  1.
-<1_introduction/figures/largepotato.jpg, id=153, 491.8375pt x 291.0875pt>
-File: 1_introduction/figures/largepotato.jpg Graphic file (type jpg)
-
-<use 1_introduction/figures/largepotato.jpg>
-File: 1_introduction/figures/largepotato.jpg Graphic file (type jpg)
-
-<use 1_introduction/figures/largepotato.jpg>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 103.
+) [1
 
 
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
- [1
-
-
-] [2 <./1_introduction/figures/largepotato.jpg>]) [3]
+]
 \openout2 = `2/aims.aux'.
 
- (./2/aims.tex [4
+ (./2/aims.tex [2
 
 
 
 ]
  2.
-) [5]
+) [3]
 \openout2 = `3/XYZ.aux'.
 
- (./3/XYZ.tex [6
+ (./3/XYZ.tex [4
 
 
 
 ]
  3.
-) [7]
+) [5]
 \openout2 = `4/XYZ.aux'.
 
- (./4/XYZ.tex [8
+ (./4/XYZ.tex [6
 
 
 
 ]
  4.
-) [9]
+) [7]
 \openout2 = `5/XYZ.aux'.
 
- (./5/XYZ.tex [10
+ (./5/XYZ.tex [8
 
 
 
 ]
  5.
-) [11]
+) [9]
 \openout2 = `6/XYZ.aux'.
 
- (./6/XYZ.tex [12
+ (./6/XYZ.tex [10
 
 
 
 ]
  6.
-) [13]
+) [11]
 \openout2 = `7/discussion.aux'.
 
- (./7/discussion.tex [14
+ (./7/discussion.tex [12
 
 
 
 ]
  7.
-) [15]
+) [13]
 \openout2 = `8/materials_methods.aux'.
 
- (./8/materials_methods.tex [16
+ (./8/materials_methods.tex [14
 
 
 
 ]
  8.
-) [17]
+) [15]
 \openout2 = `0_frontmatter/glossary.aux'.
 
- (./0_frontmatter/glossary.tex) (./thesis.nls [18
+ (./0_frontmatter/glossary.tex) (./thesis.nls [16
 
 
 
 \FN@pp@footnotehinttrue 
 
 
-]) [19] (./thesis.bbl (./thesis.brf)
+]) [17] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write8
 \openout8 = `thesis.brf'.
 
- [20
+ [18
 
-]) [21]
+]) [19]
 \openout2 = `9_backmatter/declaration.aux'.
 
- (./9_backmatter/declaration.tex [22
+ (./9_backmatter/declaration.tex [20
 
 ]) (./thesis.aux (./0_frontmatter/abstract.aux)
 (./0_frontmatter/acknowledgement.aux) (./1_introduction/introduction.aux)
 (./2/aims.aux) (./3/XYZ.aux) (./4/XYZ.aux) (./5/XYZ.aux) (./6/XYZ.aux)
 (./7/discussion.aux) (./8/materials_methods.aux) (./0_frontmatter/glossary.aux)
-(./9_backmatter/declaration.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(./9_backmatter/declaration.aux)) ) 
 Here is how much of TeX's memory you used:
- 7068 strings out of 493848
- 103162 string characters out of 1152823
- 184047 words of memory out of 3000000
- 10053 multiletter control sequences out of 15000+50000
- 12635 words of font info for 46 fonts, out of 3000000 for 9000
+ 7035 strings out of 493848
+ 102516 string characters out of 1152823
+ 183923 words of memory out of 3000000
+ 10031 multiletter control sequences out of 15000+50000
+ 12327 words of font info for 45 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 45i,11n,45p,423b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmti8.pfb>
-Output written on thesis.pdf (34 pages, 248529 bytes).
+ 45i,11n,45p,423b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmti8.pfb>
+Output written on thesis.pdf (32 pages, 158665 bytes).
 PDF statistics:
- 309 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
