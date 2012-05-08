@@ -1,10 +1,10 @@
 \documentclass[12pt]{article}
 
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{cite}
 \usepackage[nonumberlist]{glossaries}
 \usepackage[utf8]{inputenc}     % UTF8 characters in .tex docs
-
+\usepackage{graphicx}
 
 \include{glossary}
 \makeglossaries
@@ -14,15 +14,19 @@
 \date{\today}
 
 \begin{document}
-\maketitle
 
+\pagenumbering{gobble}  % so the title page isn't numbered
+\maketitle
+\newpage
+
+\pagenumbering{arabic}
 \include{intro}
 \include{dipole}
 
 
 \printglossaries
 
-\twocolumn
+
 \bibliography{bib}{}
 \bibliographystyle{unsrt}
 
