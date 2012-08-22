@@ -1,0 +1,66 @@
+\documentclass[12pt]{book}
+
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue,pdfusetitle]{hyperref}
+\usepackage{cite}
+\usepackage[nonumberlist]{glossaries}
+\usepackage[utf8]{inputenc}     % UTF8 characters in .tex docs
+\usepackage{graphicx}
+
+\pdfinfo{ % This just add some details to the file metadata
+    /Title (Use of an Optical Dipole Trap in a Cold-atom Electron Source)
+    /Author (Joshua Torrance joshuatorrance@gmail.com)
+    /Subject (MSc Thesis)
+    /Keywords (physics, atoms, Rubidium, lasers, masters)
+    }
+
+\include{glossary}
+\makeglossaries
+
+\title{Use of an Optical Dipole Trap in a Cold-atom Electron Source}
+\author{Joshua Torrance}
+\date{\today}
+
+\begin{document}
+
+\pagenumbering{gobble}  % so the title page isn't numbered
+%\maketitle
+
+
+%%% Title page %%%
+    \renewcommand{\footnotesize}{\small}
+    \renewcommand{\footnoterule}{\relax}
+    \thispagestyle{empty}
+    \begin{center}
+        { \Huge {\bfseries {Use of an Optical Dipole Trap in a Cold-atom Electron Source}} \par}
+    {\large \vspace*{35mm} {{\includegraphics[width=4cm]{figs/logo.png}} \par} \vspace*{25mm}}
+        {{\vspace*{30mm} \Large {Joshua Torrance}} \par} 
+    {\large 
+	    \vspace*{1ex}
+        {{School of Physics} \par}
+	    \vspace*{1ex}
+        {{The University of Melbourne} \par}
+	    \vspace*{25mm}
+    }%end large
+    \end{center}
+    \null\vfill
+
+\tableofcontents
+\pagenumbering{roman}
+
+\renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
+
+
+\include{1_intro/intro}
+\include{2_motivation/motivation}
+\include{3_theory/dipole}
+\include{4_setup/setup}
+\include{5_results/results}
+
+\printglossaries
+\newpage
+
+\bibliography{bib}{}
+\bibliographystyle{unsrt}
+
+
+\end{document}
