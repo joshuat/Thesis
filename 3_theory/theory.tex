@@ -16,6 +16,43 @@ some statistical stuff
 
 \section{Optical Dipole Traps}
 
+\subsection{Optical Dipole Force}
+
+An electric field, $\emph{E}$, from laser light of frequency $\omega$ will induce an atomic dipole moment $\boldsymbol{p}$ in an atom placed within the light field. Using standard complex notation we can write,
+
+\begin{equation}\label{eq:efield}
+\boldsymbol E (\boldsymbol r ,t)=\hat{\boldsymbol e} \tilde E (\boldsymbol r) \exp{-i\omega t + c.c.}
+\end{equation}
+where $\hat{\boldsymbol{e}}$ is the polarisation unit vector. The amplitude of the dipole moment, $\tilde p$, is related to the electric field amplitude by
+\begin{equation}\label{eq:polarisability}
+\tilde p = \alpha \tilde E.
+\end{equation}
+$\alpha$ depends on the driving frequency, $\omega$ and is called the complex polarisability.
+
+The induced dipole moment, $\boldsymbol p$ has an interaction potential with the electric field, $\boldsymbol E$ given by
+\begin{equation}\label{eq:interaction_pot}
+U_{dip} = - \frac{1}{2} \langle \boldsymbol{pE} \rangle = - \frac{1}{2 \epsilon_0 c} \Re(\alpha)I,
+\end{equation}
+where the time average over the rapidly oscillating terms is indicated by the angle brackers, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $1 \over 2$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
+\begin{equation}\label{eq:dipole_force}
+\boldsymbol F_{dip}(\boldsymbol r ) = - \nabla U_{dip}(\boldsymbol r) = \frac{1}{2 \epsilon_0 c} \Re(\alpha) \nabla I(\boldsymbol r).
+\end{equation}
+The dipole force is a conservative force and is proportional to gradient of the intensity of the light field.
+
+The oscillator absorbs power from the light field which is re-emitted as dipole radiation. This is given by,
+
+\begin{equation}\label{eq:power_absorbed}
+P_{abs} = \langle \boldsymbol{\dot p E} \rangle = 2 \omega \Im{\tilde p \tilde E*} = \frac{\omega}{\epsilon_0 c} \Im (\alpha) I
+\end{equation}
+
+The complex part of the polarisability gives the out of phase component of the dipole oscillation which results in absorption. Absorption can be interpreted in terms of photon scattering in cycles of absorption and emmission of photons of energy $\hbar \omega$. This corresponds to a scattering rate of
+\begin{equation}\label{eq:scattering_rate}
+\Gamma(\boldsymbol r) = \frac{P_{abs}}{\hbar \omega} = \frac{1}{\hbar \epsilon_0 c} \Im(\alpha) I(\boldsymbol r)
+\end{equation}
+
+
+
+
     \subsection{force}
 
     \subsection{potential}
