@@ -16,14 +16,14 @@ some statistical stuff
 
 \section{Optical Dipole Traps}
 
-\subsection{Optical Dipole Force}
+The following derivation of the dipole potential and scattering rate for \gls{odt} follows the one presented in Grimm and Weidem\"uller\cite{grimm_optical_2000}.
 
 An electric field, $\emph{E}$, from laser light of frequency $\omega$ will induce an atomic dipole moment $\boldsymbol{p}$ in an atom placed within the light field. Using standard complex notation we can write,
 
 \begin{equation}\label{eq:efield}
 \boldsymbol E (\boldsymbol r ,t)=\hat{\boldsymbol e} \tilde E (\boldsymbol r) \exp{-i\omega t + c.c.}
 \end{equation}
-where $\hat{\boldsymbol{e}}$ is the polarisation unit vector. The amplitude of the dipole moment, $\tilde p$, is related to the electric field amplitude by
+where $\hat{\boldsymbol{e}}$ is the polarisation unit vector. The amplitude of the dipole moment, $\tilde p$, is related to the electric field amplitude, $\tilde E$, by
 \begin{equation}\label{eq:polarisability}
 \tilde p = \alpha \tilde E.
 \end{equation}
@@ -31,27 +31,55 @@ $\alpha$ depends on the driving frequency, $\omega$ and is called the complex po
 
 The induced dipole moment, $\boldsymbol p$ has an interaction potential with the electric field, $\boldsymbol E$ given by
 \begin{equation}\label{eq:interaction_pot}
-U_{dip} = - \frac{1}{2} \langle \boldsymbol{pE} \rangle = - \frac{1}{2 \epsilon_0 c} \Re(\alpha)I,
+U_{dip} = - \frac{1}{2} \langle \boldsymbol{pE} \rangle = - \frac{1}{2 \epsilon_0 c} Re(\alpha)I,
 \end{equation}
-where the time average over the rapidly oscillating terms is indicated by the angle brackers, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $1 \over 2$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
+where the time average over the rapidly oscillating terms is indicated by the angle brackers, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $\frac{1}{2}$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
 \begin{equation}\label{eq:dipole_force}
-\boldsymbol F_{dip}(\boldsymbol r ) = - \nabla U_{dip}(\boldsymbol r) = \frac{1}{2 \epsilon_0 c} \Re(\alpha) \nabla I(\boldsymbol r).
+\boldsymbol F_{dip}(\boldsymbol r ) = - \nabla U_{dip}(\boldsymbol r) = \frac{1}{2 \epsilon_0 c} Re(\alpha) \nabla I(\boldsymbol r).
 \end{equation}
 The dipole force is a conservative force and is proportional to gradient of the intensity of the light field.
 
 The oscillator absorbs power from the light field which is re-emitted as dipole radiation. This is given by,
 
 \begin{equation}\label{eq:power_absorbed}
-P_{abs} = \langle \boldsymbol{\dot p E} \rangle = 2 \omega \Im{\tilde p \tilde E*} = \frac{\omega}{\epsilon_0 c} \Im (\alpha) I
+P_{abs} = \langle \boldsymbol{\dot p E} \rangle = 2 \omega Im(\tilde p \tilde E^*) = \frac{\omega}{\epsilon_0 c} Im (\alpha) I
 \end{equation}
 
 The complex part of the polarisability gives the out of phase component of the dipole oscillation which results in absorption. Absorption can be interpreted in terms of photon scattering in cycles of absorption and emmission of photons of energy $\hbar \omega$. This corresponds to a scattering rate of
 \begin{equation}\label{eq:scattering_rate}
-\Gamma(\boldsymbol r) = \frac{P_{abs}}{\hbar \omega} = \frac{1}{\hbar \epsilon_0 c} \Im(\alpha) I(\boldsymbol r)
+\Gamma(\boldsymbol r) = \frac{P_{abs}}{\hbar \omega} = \frac{1}{\hbar \epsilon_0 c} Im(\alpha) I(\boldsymbol r).
 \end{equation}
 
+\subsection{Atomic Polarisability}
 
+The atomic polarisability, $\alpha$ can be calulated by using Lorentz's model for a classical oscillator {\color{red} citation please}. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
 
+The polarisability can be calculated if the equation of motion, $\ddot{x} + \gamma \dot{x} + \omega_0^2 x = -eE(t)/m_e$, is integrated for the driven oscillation of the electron to give
+\begin{equation} \label{eq:polarisability}
+\alpha = \frac{e^2}{m_e} \frac{1}{\omega_0^2-\omega^2-i\omega\Gamma_\omega}
+\end{equation}
+where the damping rate due to radiative energy loss is
+\begin{equation}\label{eq:damping_rate}
+\Gamma_\omega=\frac{e^2\omega^2}{6\pi\epsilon_0m_ec^3}.
+\end{equation}
+By substituting $e^2/m_e=6\pi\epsilon_0 c^3\Gamma_\omega / \omega^2$ and the on-resonance damping rate $\Gamma \equiv \Gamma_{\omega_0} = (\omega_0/\omega)^2\Gamma_\omega$ we get
+\begin{equation}\label{eq:final_polarisability}
+\alpha = 6\pi \epsilon_0 c^3 \frac{\Gamma/\omega_0^2}{\omega_0^2 - \omega^2 - i(\omega^3/\omega_0^2)\Gamma}
+\end{equation}
+
+While this is classically derived is serves as a good approximation for far-detuned dipole traps due to the relatively low scattering rates and hence low saturation\cite{grimm_optical_2000}.
+
+\subsection{Optical Dipole Force and Scattering Rate}
+
+Using equation \ref{eq:final_polarisability} in \ref{eq:interaction_pot} and \ref{eq:scattering_rate} in the case of large detunings and negligible saturation we can derive
+
+\begin{equation}\label{eq:potential}
+U_{dip}(\boldsymbol r) = -\frac{3\pi c^2}{2\omega_0^3}\left(\frac{\Gamma}{\omega_0-\omega} + \frac{\Gamma}{\omega_0+\omega}\right) I(\boldsymbol r),
+\end{equation}
+and
+\begin{equation}\label{eq:scattering}
+\Gamma_{sc} = \frac{3\pi c^2}{2\hbar\omega_0^3} \left(\frac{\omega}{\omega_0}\right)^3 \left(\frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0+\omega}\right)^2 I(\boldsymbol r).
+\end{equation}
 
     \subsection{force}
 
