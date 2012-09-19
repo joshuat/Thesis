@@ -20,6 +20,8 @@
 *.pdf
 *.toc
 *.brf
+*.lof
+*.lot
 
 # Packages #
 ############

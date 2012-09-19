@@ -10,10 +10,6 @@
 
 brief overview of zeeman slower, mot
 
-\section{electron signal stability}
-
-some statistical stuff
-
 \section{Optical Dipole Traps}
 
 The following derivation of the dipole potential and scattering rate for \gls{odt} follows the one presented in Grimm and Weidem\"uller\cite{grimm_optical_2000}.
@@ -45,14 +41,14 @@ The oscillator absorbs power from the light field which is re-emitted as dipole 
 P_{abs} = \langle \boldsymbol{\dot p E} \rangle = 2 \omega Im(\tilde p \tilde E^*) = \frac{\omega}{\epsilon_0 c} Im (\alpha) I
 \end{equation}
 
-The complex part of the polarisability gives the out of phase component of the dipole oscillation which results in absorption. Absorption can be interpreted in terms of photon scattering in cycles of absorption and emmission of photons of energy $\hbar \omega$. This corresponds to a scattering rate of
+The complex part of the polarisability gives the out of phase component of the dipole oscillation which results in absorption. Absorption can be interpreted in terms of photon scattering in cycles of absorption and emission of photons of energy $\hbar \omega$. This corresponds to a scattering rate of
 \begin{equation}\label{eq:scattering_rate}
 \Gamma(\boldsymbol r) = \frac{P_{abs}}{\hbar \omega} = \frac{1}{\hbar \epsilon_0 c} Im(\alpha) I(\boldsymbol r).
 \end{equation}
 
 \subsection{Atomic Polarisability}
 
-The atomic polarisability, $\alpha$ can be calulated by using Lorentz's model for a classical oscillator {\color{red} citation please}. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
+The atomic polarisability, $\alpha$ can be calculated by using Lorentz's model for a classical oscillator {\color{red} citation please}. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
 
 The polarisability can be calculated if the equation of motion, $\ddot{x} + \gamma \dot{x} + \omega_0^2 x = -eE(t)/m_e$, is integrated for the driven oscillation of the electron to give
 \begin{equation} \label{eq:polarisability}
@@ -71,7 +67,7 @@ While this is classically derived is serves as a good approximation for far-detu
 
 \subsection{Optical Dipole Force and Scattering Rate}
 
-Using equation \ref{eq:final_polarisability} in \ref{eq:interaction_pot} and \ref{eq:scattering_rate} in the case of large detunings and negligible saturation we can derive
+Using equation \ref{eq:final_polarisability} in \ref{eq:interaction_pot} and \ref{eq:scattering_rate} in the case of large detuning and negligible saturation we can derive
 
 \begin{equation}\label{eq:potential}
 U_{dip}(\boldsymbol r) = -\frac{3\pi c^2}{2\omega_0^3}\left(\frac{\Gamma}{\omega_0-\omega} + \frac{\Gamma}{\omega_0+\omega}\right) I(\boldsymbol r),
@@ -81,16 +77,105 @@ and
 \Gamma_{sc} = \frac{3\pi c^2}{2\hbar\omega_0^3} \left(\frac{\omega}{\omega_0}\right)^3 \left(\frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0+\omega}\right)^2 I(\boldsymbol r).
 \end{equation}
 
-    \subsection{force}
+Most experiments are performed with $\omega$ relatively close to the resonance, $\omega_0$. In this case the detuning $\Delta\equiv \omega - \omega_0 \ll \omega_0$. Here we can make the rotating wave approximation and set $\omega/\omega_0\approx 1$. The equations above simplify to
 
-    \subsection{potential}
+\begin{equation}\label{eq:simple_potential}
+U_{dip}(\boldsymbol{r}) = \frac{3\pi c^2}{2 \omega_0^3} \frac{\Gamma}{\Delta} I(\boldsymbol{r}),
+\end{equation}
 
-    \subsection{scattering}
+and
 
-    \subsection{lifetime}
+\begin{equation}\label{eq:simple_scattering}
+\Gamma_{sc} (\boldsymbol r ) = \frac{3\pi c^2}{2\hbar\omega_0^3} \left( \frac{\Gamma}{\Delta} \right)^2 I(\boldsymbol r ).
+\end{equation}
+
+These equations provide the basis for understanding the operation of dipole traps. The sign of the detuning is clearly important. For below resonance or `red' detuning ($\Delta < 0$) the dipole potential is negative and atoms are drawn into the high intensity portions of the light field. Above resonance or `blue' detuning ($\Delta > 0$) results in repulsion from the high intensity regions of the light and a positive potential.
+
+The potential scales with $I/\Delta$ and the scattering scales with $I/\Delta^2$ which means that for a certain potential depth high intensity and detuning will result in the least scattering.
+
+{\color{red} Still need to talk about how these equations make a trap as well as some theoretical numbers}
+
+\subsection{lifetime}
+
+{\color{red} hmmm what to do here....}
+
+\subsection{Configuration}
+
+remember to mention polarisation stuff for the crossed beam trap
+
+\section{Imaging}
+
+In order to determine the spatial state of the atoms at a given time techniques for imaging are required. Numerous techniques for imaging have been developed the simplest of which are fluorescence and absorption imaging.
+
+\subsection{Fluorescence Imaging}
+
+Near resonant light passing through atom clouds (such as the optical mollasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
+
+{\color{red} diagram}
+{\color{red} i should probably define destructive and non-destructive imaging methods}
+
+Flourescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the flourescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from flourescence imaging will not be detectable.
+
+\subsection{Absorption Imaging}
+
+Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. In absorption imaging the probe laser is directed through the atoms and onto the detector. As in fluorescence imaging the photons will be absorbed and reemmited in random directions. After the light has passed through the atoms a `shadow' due to the photons absorbed by the atoms will be left in the probe beam.
+
+{\color{red} diagram}
+
+The signal from absorption imaging is much stronger than that for flourescence however it is not possible to get quantitative information for dense clouds of atoms due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
+
+The strong interaction between the laser and the atoms means that with a `fragile' trap this imaging technique will give many of the atoms enough energy to escape the trap.
+
+\subsubsection{Absorption Imaging Analysis}
+
+If $I_0$ is an image of the probe beam taken while there are no atoms present and $I_{abs}$ is an image of the probe beam with the atoms present then the transmission function for the atoms, $T$, can be calculated with
+
+\begin{equation}\label{eq:transmission_function_1}
+I_{abs} = T I_0
+\end{equation}
+
+\begin{equation}\label{eq:transmission_function}
+T = \frac{I_{abs}}{I_0}
+\end{equation}
+
+\subsubsection{Atom Count}
+
+Absorption imaging can be used to determine the number of atoms in a given trap.
+
+{\color{red} work in progress...}
+
+The total power of the laser is distributed across the `true' background image. This provides us with a counts $\rightarrow$ power/intensiity ratio (assume linear?).
+
+Counts in `shadow' image $\rightarrow$ intensity loss $\rightarrow$ number of photons absorbed.
+Number of photons absorbed / chance of absorption $\rightarrow$ number of atoms
+
+Need to know, power of beam, exposure (the real one ie. with stingray offset, what about camera exposure/laser exposure?) to get intensity. Also need to figure out what the probability of absorption is. Some fluorescence will reach the camera. Is this an issue?
 
 
-\section{absorption imaging}
+\subsection{Other Imaging Methods}
 
-    \subsection{mot distribution stability}
+There are a number of other imaging techniques that can be used to image cold-atom clouds some of which are destructive and some are non-destructive. The non-destructive methods are particularly useful for imaging delicate systems such as \glspl{bec}. An example of a minimally destructive technique is diffractive contrast imaging \cite{sheludko_excited-state_2007}. There are other techniques such as diffractive dark-ground imaging\cite{gregory-orfeus_diffractive_2011} and phase contrast imaging\cite{andrews_propagation_1997}. Each of these techniques has it's own useful properties but few are as simple to setup and perform as absorption and fluorescence imaging.
 
+
+\section{Trap Stability}
+
+\section{Stability of the Electron Signal}
+
+The stability of the electron signal incident on the detector can be analysed fairly simple. For a given iteration, $i$, of the experiment the electron signal will have an average spatial centre given by
+\begin{equation}\label{eq:weight_average_spatial}
+\boldsymbol{x}_i = \frac{1}{\sum c(p)} \sum c(p) \boldsymbol x(p)
+\end{equation}
+where both sums are over all the pixels, $p$, of the detector, $c(p)$ are the counts for a given pixel and $\boldsymbol x(p)$ are the locations of each pixel.
+
+The average of a set of measurements, $\bar{\boldsymbol{x}}$, and the associated variance, $\mu$, for a set of size $n$ are given by
+\begin{equation}\label{eq:average_spatial}
+\bar{\boldsymbol{x}} = \frac{1}{n} \sum_{i=0}^{n} \boldsymbol{x}_i
+\end{equation}
+
+\begin{equation}\label{eq:variance}
+\mu^2 = \frac{1}{n} \sum_{i=0}^{n} (\boldsymbol{x}_i - \bar{\boldsymbol{x}})^2
+\end{equation}
+
+These simple calculations can be used to analyse the spatial variation of the electron signal.
+
+{\color{red} any other cunning stats tricks for this?}
