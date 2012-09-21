@@ -140,17 +140,36 @@ T = \frac{I_{abs}}{I_0}
 
 \subsubsection{Atom Count}
 
-Absorption imaging can be used to determine the number of atoms in a given trap.
+%http://qwiki.stanford.edu/index.php/BEC_How_To
 
-{\color{red} work in progress...}
+It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system infront of the detector as well as the power of the probe laser.
 
-The total power of the laser is distributed across the `true' background image. This provides us with a counts $\rightarrow$ power/intensiity ratio (assume linear?).
+As the probe laser traverses through the atoms cloud it obeys Beer's law,
+\begin{equation}\label{eq:beers_law}
+I(x, y) = I_0(x, y)e^{-D(x, y)}
+\end{equation}
+where D(x, y) is the optical depth along the probe beam's axis at a given position (x, y) in the plane perpendicular to the probe beam. The optical density is given by
+\begin{equation}\label{eq:optical_density}
+D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
+\end{equation}
+Here $\sigma$ is the absorption cress-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where the total number of atoms, $N$, is required.
 
-Counts in `shadow' image $\rightarrow$ intensity loss $\rightarrow$ number of photons absorbed.
-Number of photons absorbed / chance of absorption $\rightarrow$ number of atoms
+Using \ref{eq:transmission_function_1} and \ref{eq:beers_law} we can get
+\begin{equation}
+D(x, y) = -\log(\frac{I}{I_0}) = \sigma \int_{-\infty}^{\infty} n(x, y, z) dz.
+\end{equation}
 
-Need to know, power of beam, exposure (the real one ie. with stingray offset, what about camera exposure/laser exposure?) to get intensity. Also need to figure out what the probability of absorption is. Some fluorescence will reach the camera. Is this an issue?
+By integrating across the image we obtain
+\begin{equation}
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} D(x, y) dx dy = \sigma N.
+\end{equation}
+Practically $I$, $I_0$ and $D(x, y)$ will be two dimentional arrays of pixels, so The integrals can be written as sums giving
+\begin{equation}
+N = \frac{A}{\sigma} \sum D(x, y)
+\end{equation}
+where $A$ is the scaled area of the detector.
 
+The relavant cross-section, $\sigma$ can be obtained from Steck\cite{} {\color{red} reword this, cite Steck, finish getting $\sigma$ and describe how to get scale factor}.
 
 \subsection{Other Imaging Methods}
 
