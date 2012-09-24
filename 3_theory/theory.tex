@@ -144,11 +144,11 @@ T = \frac{I_{abs}}{I_0}
 
 It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system infront of the detector as well as the power of the probe laser.
 
-As the probe laser traverses through the atoms cloud it obeys Beer's law,
+As the probe laser traverses through the atoms cloud its itensity obeys Beer's law,
 \begin{equation}\label{eq:beers_law}
 I(x, y) = I_0(x, y)e^{-D(x, y)}
 \end{equation}
-where D(x, y) is the optical depth along the probe beam's axis at a given position (x, y) in the plane perpendicular to the probe beam. The optical density is given by
+where $I_0(x, y)$ is the intensity of the beam before the cloud and $D(x, y)$ is the optical depth along the probe beam's axis. The coordinates $(x, y)$ denote a given position in the plane perpendicular to the probe beam. The optical density is given by
 \begin{equation}\label{eq:optical_density}
 D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
 \end{equation}
@@ -165,11 +165,24 @@ By integrating across the image we obtain
 \end{equation}
 Practically $I$, $I_0$ and $D(x, y)$ will be two dimentional arrays of pixels, so The integrals can be written as sums giving
 \begin{equation}
-N = \frac{A}{\sigma} \sum D(x, y)
+N = \frac{A}{\sigma} \sum_{(x, y)} D(x, y)
 \end{equation}
 where $A$ is the scaled area of the detector.
 
-The relavant cross-section, $\sigma$ can be obtained from Steck\cite{} {\color{red} reword this, cite Steck, finish getting $\sigma$ and describe how to get scale factor}.
+The absorption cross-section is given by \cite{steck_rubidium_2001},
+\begin{equation}\label{eq:cross_section}
+\sigma = \frac{\sigma_0}{1+4(\Delta/\Gamma)^2 + (I/I_s)}
+\end{equation}
+where $\Delta$ is the frequency detuning of the pump light ($\Delta=0$ for on-resonant light) and $\sigma_0$ is the on-resonance, low-intensity  cross-section
+\begin{equation}
+\sigma_0 = \frac{\hbar\omega\Gamma}{2I_s}.
+\end{equation}
+Since on-resonant light with an intensity much less than the saturation intensity is used $\sigma \approx \sigma_0$ and we get
+\begin{equation}
+N = \frac{A}{\sigma_0} \sum_{(x, y)} -\log\left(\frac{I(x, y)}{I_0(x, y)}\right)
+\end{equation}
+
+The pixel scale factor can be calculated by placing an object with known dimensions (such as a ruler) at the object plane and then determining the number of pixels taken up by the object. Simply multiplying the pixel scale factor squared by the area of the probe beam on the detector to get $A$.
 
 \subsection{Other Imaging Methods}
 
