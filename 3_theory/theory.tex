@@ -128,14 +128,14 @@ The strong interaction between the laser and the atoms means that with a `fragil
 
 \subsubsection{Absorption Imaging Analysis}
 
-If $I_0$ is an image of the probe beam taken while there are no atoms present and $I_{abs}$ is an image of the probe beam with the atoms present then the transmission function for the atoms, $T$, can be calculated with
+If $I_0$ is an image of the probe beam taken while there are no atoms present and $I$ is an image of the probe beam with the atoms present then the transmission function for the atoms, $T$, can be calculated with
 
 \begin{equation}\label{eq:transmission_function_1}
-I_{abs} = T I_0
+I = T I_0
 \end{equation}
-
+and
 \begin{equation}\label{eq:transmission_function}
-T = \frac{I_{abs}}{I_0}
+T = \frac{I}{I_0}.
 \end{equation}
 
 \subsubsection{Atom Count}
@@ -144,28 +144,28 @@ T = \frac{I_{abs}}{I_0}
 
 It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system infront of the detector as well as the power of the probe laser.
 
-As the probe laser traverses through the atoms cloud its itensity obeys Beer's law,
+As the probe laser traverses through the atoms cloud its itensity obeys Beer's law{\color{red} citation},
 \begin{equation}\label{eq:beers_law}
 I(x, y) = I_0(x, y)e^{-D(x, y)}
 \end{equation}
-where $I_0(x, y)$ is the intensity of the beam before the cloud and $D(x, y)$ is the optical depth along the probe beam's axis. The coordinates $(x, y)$ denote a given position in the plane perpendicular to the probe beam. The optical density is given by
+where $I_0(x, y)$ is the intensity of the beam before the cloud, $I(x, y)$ is the intensity after the cloud and $D(x, y)$ is the optical depth along the probe beam's axis. The coordinates $(x, y)$ denote a given position in the plane perpendicular to the probe beam. The optical density is given by{\color{red} citation}
 \begin{equation}\label{eq:optical_density}
 D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
 \end{equation}
-Here $\sigma$ is the absorption cress-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where the total number of atoms, $N$, is required.
+Here $\sigma$ is the absorption cress-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where only the total number of atoms, $N$, is required.
 
-Using \ref{eq:transmission_function_1} and \ref{eq:beers_law} we can get
+Using \ref{eq:beers_law} and \ref{eq:optical_density} we can get
 \begin{equation}
-D(x, y) = -\log(\frac{I}{I_0}) = \sigma \int_{-\infty}^{\infty} n(x, y, z) dz.
+D(x, y) = -\log_e(\frac{I}{I_0}) = \sigma \int_{-\infty}^{\infty} n(x, y, z) dz.
 \end{equation}
 
 By integrating across the image we obtain
 \begin{equation}
-\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} D(x, y) dx dy = \sigma N.
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{\sigma}D(x, y) dx dy = N.
 \end{equation}
 Practically $I$, $I_0$ and $D(x, y)$ will be two dimentional arrays of pixels, so The integrals can be written as sums giving
 \begin{equation}
-N = \frac{A}{\sigma} \sum_{(x, y)} D(x, y)
+N = A \sum_{(x, y)} \frac{1}{\sigma}D(x, y)
 \end{equation}
 where $A$ is the scaled area of the detector.
 
@@ -177,9 +177,13 @@ where $\Delta$ is the frequency detuning of the pump light ($\Delta=0$ for on-re
 \begin{equation}
 \sigma_0 = \frac{\hbar\omega\Gamma}{2I_s}.
 \end{equation}
-Since on-resonant light with an intensity much less than the saturation intensity is used $\sigma \approx \sigma_0$ and we get
+If on-resonant light with an intensity much less than the saturation intensity is used $\sigma \approx \sigma_0$ and
 \begin{equation}
-N = \frac{A}{\sigma_0} \sum_{(x, y)} -\log\left(\frac{I(x, y)}{I_0(x, y)}\right)
+N = -\frac{A}{\sigma_0} \sum_{(x, y)} \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right).
+\end{equation}
+If the low-intensity condition is not satisfied then the following must be used
+\begin{equation}
+N = -A \sum_{(x, y)} \frac{1+(I(x, y)/I_s)}{\sigma_0} \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right).
 \end{equation}
 
 The pixel scale factor can be calculated by placing an object with known dimensions (such as a ruler) at the object plane and then determining the number of pixels taken up by the object. Simply multiplying the pixel scale factor squared by the area of the probe beam on the detector to get $A$.
