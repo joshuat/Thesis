@@ -12,11 +12,81 @@ brief overview of zeeman slower, mot
 
 \section{CAES}
 
-ionisation
+\subsection{Electron Generation in the Cold-Atom Electron Source}
+The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides strong control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible as described by McCulluch et. al. \cite{mcculloch_arbitrarily_2011}.
 
-acceleration
+Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continium. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
 
-steering
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=2]
+    \begin{scope}[thick, decoration={snake,amplitude=.4mm,
+        segment length=2mm,post length=1mm}]
+      \draw (0, 0) node[left=0.4cm] {$\ket{g}$}
+        -- (2, 0);
+      \draw (0, 1.5)  node[left=0.4cm] {$\ket{e}$}
+        -- (2, 1.5);
+
+      \draw (0, 2.5) -- (2, 2.5);
+      \draw (0, 3) -- (2, 3);
+      \draw (0, 3.25) -- (2, 3.25);
+      \draw (0, 3.375) -- (2, 3.375);
+      \draw (0, 3.4375) -- (2, 3.4375);
+      \draw (0, 3.5) -- (2, 3.5);
+      \shade[top color=white,bottom color=black] (0, 3.5) rectangle (2, 3.75);
+
+      \draw[style=dashed] (0, 3.6) -- (2, 3.6);
+
+      \draw[decorate,red,->] (1,0) -- ++(90:1.5);% excitation
+      \draw[decorate,blue,->] (1,1.5) -- ++(90:2.1);% ionisation
+
+      \draw (1, 0.75) node[left=0.25cm] {$\hbar\omega_1$};
+      \draw (1, 2) node[left=0.25cm] {$\hbar\omega_2$};
+    \end{scope}
+\end{tikzpicture}
+\caption[Title]{Energy level diagram for atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$is used to couple $\ket{e}$ to the ionisation continuum. Changing $\omega_2$ allows the excess energy of the ionisation process to be adjusted.}
+\label{fig:energy_level}
+\end{figure}
+
+In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms (780.24nm) which results in efficient population transfer. The ionisation laser couples the first excited state to a Rydberg state rather than to the ionisation continuum directly. This results in a resonant transition which is more efficient than other ionisation pathways which rely on non-resonant behaviour. The atoms in Rydberg states will undergo field ionisation when the accelerating electric field is applied to the atoms which will result in cold electrons.
+
+{\color{red} Field Inionisation}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=2]
+    \begin{scope}[thick, decoration={snake,amplitude=.4mm,
+        segment length=2mm,post length=1mm}]
+
+    \filldraw[fill=blue] (0, 1.9) circle (0.05) node[above] {\tiny $e^{\mbox{-}}$};
+    \draw [color=black, dotted] (-1.4, 1.9) -- (1.4, 1.9);
+    \draw (-0.8, 2.2) node {\tiny No electric field};
+    \draw [dashed, color=gray] (-1.4, 2) node[color=black, left] {\tiny $V=0$} -- (1.4, 2);
+
+    \draw[domain=-1.4:-0.15, color=black] plot (\x, {-1/(50*\x*\x)+2});
+    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)+2}) node[right] {\tiny Atomic Potential};
+
+    \filldraw[fill=blue] (0, -0.1) circle (0.05) node[above] {\tiny $e^{\mbox{-}}$};
+    \draw [color=black, dotted] (-1.4, -0.1) -- (1.4, -0.1);
+    \draw [color=blue, above=4, ->] (0.2, -0.1) -- (1.4, -0.1);
+    \draw [color=red, ->] (-0.5, -1.2) -- (0.5, -1.2) node [right] {\tiny $\vec{E}$};
+    \draw [dashed, color=gray] (-1.4, 0) node[color=black, left] {\tiny $V=0$} -- (1.4, 0);
+
+    \draw[domain=-1.4:-0.143, color=black] plot (\x, {-1/(50*\x*\x)-0.3*\x});
+    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)-0.3*\x}) node[right] {\tiny Distorted Atomic Potential};
+
+    \end{scope}
+\end{tikzpicture}
+\caption[Title]{An amazing caption of justice. Also fix e- postion.}
+\end{figure}
+
+
+
+has photons resonant to the excited transition to the continuum ($\sim$480nm). {\color{red} is there a better way to phrase this?} 
+
+\subsection{acceleration}
+
+\subsection{steering}
 
 \section{Optical Dipole Traps}
 
@@ -90,9 +160,7 @@ Most experiments are performed with $\omega$ relatively close to the resonance, 
 \begin{equation}\label{eq:simple_potential}
 U_{dip}(\boldsymbol{r}) = \frac{3\pi c^2}{2 \omega_0^3} \frac{\Gamma}{\Delta} I(\boldsymbol{r}),
 \end{equation}
-
 and
-
 \begin{equation}\label{eq:simple_scattering}
 \Gamma_{sc} (\boldsymbol r ) = \frac{3\pi c^2}{2\hbar\omega_0^3} \left( \frac{\Gamma}{\Delta} \right)^2 I(\boldsymbol r ).
 \end{equation}
@@ -139,11 +207,7 @@ The strong interaction between the laser and the atoms means that with a `fragil
 If $I_0$ is an image of the probe beam taken while there are no atoms present and $I$ is an image of the probe beam with the atoms present then the transmission function for the atoms, $T$, can be calculated with
 
 \begin{equation}\label{eq:transmission_function_1}
-I = T I_0
-\end{equation}
-and
-\begin{equation}\label{eq:transmission_function}
-T = \frac{I}{I_0}.
+I = T I_0.
 \end{equation}
 
 \subsubsection{Atom Count}
@@ -162,7 +226,7 @@ D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
 \end{equation}
 Here $\sigma$ is the absorption cress-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where only the total number of atoms, $N$, is required.
 
-Using \ref{eq:beers_law} and \ref{eq:optical_density} we can get
+Using equations \ref{eq:beers_law} and \ref{eq:optical_density} we can get
 \begin{equation}
 D(x, y) = -\log_e(\frac{I}{I_0}) = \sigma \int_{-\infty}^{\infty} n(x, y, z) dz.
 \end{equation}
