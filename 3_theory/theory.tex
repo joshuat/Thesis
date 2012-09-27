@@ -1,30 +1,22 @@
 \chapter{Theory}
 
-\section{basic atomic theory}
-
-2 level atom etc
-
-\section{dipole force}
-
 \section{MOT Physics}
 
 brief overview of zeeman slower, mot
 
-\section{CAES}
-
-\subsection{Electron Generation in the Cold-Atom Electron Source}
+\section{Electron Generation in the Cold-Atom Electron Source}
 The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides strong control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible as described by McCulluch et. al. \cite{mcculloch_arbitrarily_2011}.
 
 Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continium. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
 
 \begin{figure}
 \centering
-\begin{tikzpicture}[scale=2]
+\begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
-      \draw (0, 0) node[left=0.4cm] {$\ket{g}$}
+      \draw (0, 0) node[left=0.4cm] {\large $\ket{g}$}
         -- (2, 0);
-      \draw (0, 1.5)  node[left=0.4cm] {$\ket{e}$}
+      \draw (0, 1.5)  node[left=0.4cm] {\large $\ket{e}$}
         -- (2, 1.5);
 
       \draw (0, 2.5) -- (2, 2.5);
@@ -48,9 +40,7 @@ Two lasers with different wavelengths can be used for efficient ionisation of at
 \label{fig:energy_level}
 \end{figure}
 
-In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms (780.24nm) which results in efficient population transfer. The ionisation laser couples the first excited state to a Rydberg state rather than to the ionisation continuum directly. This results in a resonant transition which is more efficient than other ionisation pathways which rely on non-resonant behaviour. The atoms in Rydberg states will undergo field ionisation when the accelerating electric field is applied to the atoms which will result in cold electrons.
-
-{\color{red} Field Inionisation}
+In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms (780.24nm). This resonance results in efficient population transfer to the excited state. The ionisation laser can be set to couple the first excited state to a Rydberg state rather than to the ionisation continuum directly which results in resonant transitions. The resonant transition to a Rydberg state followed by field ionisation induced by the accelerating electric field (see figure \ref{fig:field_ionisation}) is more efficient than other ionisation pathways which rely on non-resonant behaviour. Field ionisation results in free electrons with very little energy ($T\approx10K$\cite{mcculloch_arbitrarily_2011}) and are thus called `cold'.
 
 \begin{figure}
 \centering
@@ -58,32 +48,30 @@ In the \gls{caes} the excitation laser is resonant to the D2 transition of the t
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
 
-    \filldraw[fill=blue] (0, 1.9) circle (0.05) node[above] {\tiny $e^{\mbox{-}}$};
+    \filldraw[fill=blue] (0, 1.9) circle (0.05);
     \draw [color=black, dotted] (-1.4, 1.9) -- (1.4, 1.9);
-    \draw (-0.8, 2.2) node {\tiny No electric field};
-    \draw [dashed, color=gray] (-1.4, 2) node[color=black, left] {\tiny $V=0$} -- (1.4, 2);
+    \draw (0, 1) node {\small No electric field};
+    \draw [dashed, color=gray] (-1.4, 2) node[color=black, left] {\small $V=0$} -- (1.4, 2);
 
     \draw[domain=-1.4:-0.15, color=black] plot (\x, {-1/(50*\x*\x)+2});
-    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)+2}) node[right] {\tiny Atomic Potential};
+    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)+2}) node[right] {\small Atomic Potential};
 
-    \filldraw[fill=blue] (0, -0.1) circle (0.05) node[above] {\tiny $e^{\mbox{-}}$};
+    \filldraw[fill=blue] (0, -0.1) circle (0.05);
     \draw [color=black, dotted] (-1.4, -0.1) -- (1.4, -0.1);
     \draw [color=blue, above=4, ->] (0.2, -0.1) -- (1.4, -0.1);
-    \draw [color=red, ->] (-0.5, -1.2) -- (0.5, -1.2) node [right] {\tiny $\vec{E}$};
-    \draw [dashed, color=gray] (-1.4, 0) node[color=black, left] {\tiny $V=0$} -- (1.4, 0);
+    \draw [color=red, ->] (-0.5, -1.1) -- (0.5, -1.1) node [right] {\small $\vec{E}$};
+    \draw [dashed, color=gray] (-1.4, 0) node[color=black, left] {\small $V=0$} -- (1.4, 0);
 
     \draw[domain=-1.4:-0.143, color=black] plot (\x, {-1/(50*\x*\x)-0.3*\x});
-    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)-0.3*\x}) node[right] {\tiny Distorted Atomic Potential};
+    \draw[domain=0.15:1.4, color=black] plot (\x, {-1/(50*\x*\x)-0.3*\x}) node[right] {\small Distorted Atomic Potential};
 
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{The top diagram dipicts an atom excited to a Rydberg state without the presence of an electric field. The lower diagram show the same atom in the presence of an electric field. The electric field distorts the atomic potential in such a way as to allow the atom to become ionised.}
+\caption[Title]{The top diagram dipicts an atom excited to a Rydberg state without the presence of an electric field. The lower diagram show the same atom in the presence of an electric field. The electric field distorts the atomic potential in such a way as to allow the atom to become ionised. The solid black lines represent the atomic potential, the dashed lines the zero field ionisation threshhold, the dotted lines the energy of the valence electrons, the blue circles show the elctrons and the red arrow the direction of the electric field.}
+\label{fig:field_ionisation}
 \end{figure}
 
-
-\subsection{acceleration}
-
-\subsection{steering}
+The cold electrons are then accelerated with an electric field and steered with a number of magnetic devices through the sample and onto the detector.
 
 \section{Optical Dipole Traps}
 
@@ -213,7 +201,7 @@ I = T I_0.
 
 It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system infront of the detector as well as the power of the probe laser.
 
-As the probe laser traverses through the atoms cloud its itensity obeys Beer's law{\color{red} citation},
+As the probe laser traverses through the atoms cloud its intensity obeys Beer's law{\color{red} citation},
 \begin{equation}\label{eq:beers_law}
 I(x, y) = I_0(x, y)e^{-D(x, y)}
 \end{equation}
