@@ -167,14 +167,19 @@ Here $z_0$ is the Rayleigh length given by
 z_0 = \frac{\pi w_0^2}{\lambda}.
 \end{equation}
 
-{\color{red} Guassian beam diagram??}
+{\color{red} Guassian beam diagram? <- only if time permits}
 
-These equations can be used to simulate an \gls{odt}. Using the light sources described in {\color{red} [WHEREEVER THE LIGHT SOURCES ARE DESCRIBED]} we can create generate the potential depicted {\color{red} soon$^{TM}$} below.
+These equations can be used to simulate an \gls{odt}. Using the light sources similar to those described in chapter 3 we can create generate the potential depicted in figure \ref{fig:dipolepotential}. The potential has been converted to an effective temperature, $T_{eff}$ using
+\begin{equation}
+T_{eff}(r, z) = \frac{2}{3 k_B} U(r, z)
+\end{equation}
+where $U$ is the potential and $k_B$ is Boltzmann's constant.
 
 \begin{figure}
+\label{fig:dipolepotential}
 \centering
 \includegraphics[width=15cm]{figs/dipolepotential.pdf}
-\caption{{\color{red}Figure of justice. With text that is too small.}}
+\caption{The effective temperature of a single beam optical dipole trap is depicted here. The total power of the beam is 500mW with a detuning of 2nm red of the 85Rb D2 resonance and a beam waist of 250$\mu$m. The top graph shows a cross section through the centre of the beam (note that the scale and units on each axis are different). The graph on the bottom left shows the effective temperature along the r=0 axis and the graph on the right shows the temperature along the z=0 axis.}
 \end{figure}
 
 {\color{red} Still need to talk about how these equations make a trap as well as some theoretical numbers}
@@ -224,6 +229,26 @@ If $I_0$ is an image of the probe beam taken while there are no atoms present an
 \begin{equation}\label{eq:transmission_function_1}
 I = T I_0.
 \end{equation}
+Each point in $T$ corresponds to the integrated column density of the atoms in the cloud at that point and this information can be used to determine a number of different metrics such as the temperature of the atoms and the total number of atoms.
+
+\subsubsection{MOT Temperature}
+An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimentional density can be modeled by
+\begin{equation}\label{eq:gaussian_density}
+\rho (x, y) = \rho_0\exp\left(\frac{x^2}{\sigma_x^2} + \frac{y^2}{\sigma_y^2}\right)
+\end{equation}
+where $\rho_0$ is the central density and $\sigma_x$ and $\sigma_y$ are the 1/e radii of the distribution.
+
+If the trapping lasers and magnetic fields are turned off the atom-cloud should begin to expand thermally. The r.m.s thermal velocity, $v_0$, is related to the temperature of the cloud, $T$, via \cite{sheludko_shaped_2010}
+\begin{equation}\label{eq:temp_velocity}
+v_0 = \sqrt{\frac{2k_BT}{m_{Rb}}}
+\end{equation}
+where $k_B$ is Boltzmann's constant and $m_{Rb}$ is the mass of rubidium. The radius of the atom cloud, $r$, at time $t$ after it has been released is given by
+\begin{equation}\label{eq:cloud_radius}
+r(t) = \sqrt{r_0^2 + (v_0t)^2}.
+\end{equation}
+Here $r_0$ is the initial 1/e spatial radius of the cloud.
+
+The temperature can be calculated by taking a number of absorption images for various values of $t$ and then fitting each of the atomic distributions to equation \ref{eq:gaussian_density}. The various cloud radii can then be fitted to equation \ref{eq:cloud_radius} and a temperature can then be calculated with equation \ref{eq:temp_velocity}.
 
 \subsubsection{Atom Count}
 
@@ -299,6 +324,6 @@ The average of a set of measurements, $\bar{\boldsymbol{x}}$, and the associated
 \mu^2 = \frac{1}{n} \sum_{i=0}^{n} (\boldsymbol{x}_i - \bar{\boldsymbol{x}})^2
 \end{equation}
 
-These simple calculations can be used to analyse the spatial variation of the electron signal.
+These simple calculations can be used to analyse the spatial variation of the electron signal and the variance can be used as a metric for determining whether the stability of the source is being improved by changes.
 
 {\color{red} any other cunning stats tricks for this?}
