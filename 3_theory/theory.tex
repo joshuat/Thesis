@@ -167,7 +167,7 @@ Here $z_0$ is the Rayleigh length and is given by
 z_0 = \frac{\pi w_0^2}{\lambda}.
 \end{equation}
 
-{\color{red} Guassian beam diagram? <- only if time permits}
+{\color{red} Gaussian beam diagram? <- only if time permits}
 
 These equations can be used to simulate an \gls{odt}. Using the light sources similar to those described in chapter 3 we can create generate the potential depicted in figure \ref{fig:dipolepotential}. The potential has been converted to an effective temperature, $T_{eff}$ using
 \begin{equation}
@@ -192,7 +192,7 @@ where $U$ is the potential and $k_B$ is Boltzmann's constant.
 
 The simplest form of optical dipole trap consists of a single focussed Gaussian beam that can trap atoms at the focus. These simple traps have been used since the 1980s\cite{chu_experimental_1986} and are frequently used to form \glspl{bec} and atom lasers\cite{chikkatur_continuous_2002, kleine_buning_slow_2010, lin_rapid_2009}.
 
-Single beam traps have strong confinement in the direction perpendicular to the beam and relatively weak confinement along the beam. A trap with strong confinement in all directions can be created by crossing two beams. Crossed beam traps are used frequently to produce \glspl{bec} \cite{couvert_quasi-monomode_2008, arnold_all-optical_2011, fu_bose-einstein_2011, barrett_all-optical_2001, xiong_evaporative_2010}
+Single beam traps have strong confinement in the direction perpendicular to the beam and relatively weak confinement along the beam. A trap with strong confinement in all directions can be created by crossing two beams. Crossed beam traps are used frequently to produce \glspl{bec} \cite{couvert_quasi-monomode_2008, arnold_all-optical_2011, fu_bose-einstein_2011, barrett_all-optical_2001, xiong_evaporative_2010}.
 
 {\color{red} diagram!}
 
@@ -209,15 +209,15 @@ Near resonant light passing through atom clouds (such as the optical mollasses l
 {\color{red} diagram}
 {\color{red} i should probably define destructive and non-destructive imaging methods}
 
-Flourescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the flourescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from flourescence imaging will not be detectable.
+Fluorescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the fluorescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from fluorescence imaging will not be detectable.
 
 \subsection{Absorption Imaging}
 
-Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. In absorption imaging a collimated probe laser is directed through the atoms and onto the detector. As in fluorescence imaging the photons will be absorbed and reemmited in random directions. After the light has passed through the atoms a `shadow' due to the photons absorbed by the atoms will be left in the probe beam.
+Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. In absorption imaging a collimated probe laser is directed through the atoms and onto the detector. As in fluorescence imaging the photons will be absorbed and reemitted in random directions. After the light has passed through the atoms a `shadow' due to the photons absorbed by the atoms will be left in the probe beam.
 
 {\color{red} diagram}
 
-The signal from absorption imaging is much stronger than that for flourescence however it is not possible to get quantitative information for dense clouds of atoms due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
+The signal from absorption imaging is much stronger than that for fluorescence however it is not possible to get quantitative information for dense clouds of atoms due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
 
 The strong interaction between the laser and the atoms means that with a `fragile' trap this imaging technique will give many of the atoms enough energy to escape the trap.
 
@@ -238,7 +238,7 @@ I = T I_0.
 Each point in $T$ corresponds to the integrated column density of the atoms in the cloud at that point and this information can be used to determine a number of different metrics such as the temperature of the atoms and the total number of atoms.
 
 \subsubsection{MOT Temperature}
-An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimentional density can be modeled by
+An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimensional density can be modeled by
 \begin{equation}\label{eq:gaussian_density}
 \rho (x, y) = \rho_0\exp\left(\frac{x^2}{\sigma_x^2} + \frac{y^2}{\sigma_y^2}\right)
 \end{equation}
@@ -260,7 +260,7 @@ The temperature can be calculated by taking a number of absorption images for va
 
 %http://qwiki.stanford.edu/index.php/BEC_How_To
 
-It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system infront of the detector as well as the power of the probe laser.
+It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system in front of the detector as well as the power of the probe laser.
 
 As the probe laser traverses through the atoms cloud its intensity obeys Beer's law{\color{red} citation},
 \begin{equation}\label{eq:beers_law}
@@ -270,7 +270,7 @@ where $I_0(x, y)$ is the intensity of the beam before the cloud, $I(x, y)$ is th
 \begin{equation}\label{eq:optical_density}
 D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
 \end{equation}
-Here $\sigma$ is the absorption cress-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where only the total number of atoms, $N$, is required.
+Here $\sigma$ is the absorption cross-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where only the total number of atoms, $N$, is required.
 
 Using equations \ref{eq:beers_law} and \ref{eq:optical_density} we can get
 \begin{equation}
@@ -281,7 +281,7 @@ By integrating across the image we obtain
 \begin{equation}
 \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{\sigma}D(x, y) dx dy = N.
 \end{equation}
-Practically $I$, $I_0$ and $D(x, y)$ will be two dimentional arrays of pixels, so The integrals can be written as sums giving
+Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, so The integrals can be written as sums giving
 \begin{equation}
 N = A \sum_{(x, y)} \frac{1}{\sigma}D(x, y)
 \end{equation}
