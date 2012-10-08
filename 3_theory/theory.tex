@@ -1,10 +1,40 @@
 \chapter{Theory}
 
-\section{MOT Physics}
+\section{Energy Levels of Rubidium}
 
-brief overview of zeeman slower, mot
+go here with a pretty figure
 
-Rb energy levels, dark states etc.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \begin{scope}[thick, decoration={snake,amplitude=.4mm,
+        segment length=2mm,post length=1mm}]
+
+    % 5 2S 3/2
+        \draw (-0.5, 0.05) node {$5 ^2 S_{3/2}$};
+        \draw (0, -0.1) -- (4, -0.1) node[right=0.5 cm] {F=2};
+        \draw (0, 0.2) -- (4, 0.2) node[right=0.5 cm] {F=3};
+    % 5 2P3/2
+        \draw (-0.5, 2.05) node {$5 ^2 P_{3/2}$};
+        \draw (0, 1.5) -- (4, 1.5) node[right=0.5 cm] {F=1};
+        \draw (0, 1.8) -- (4, 1.8) node[right=0.5 cm] {F=2};
+        \draw (0, 2.2) -- (4, 2.2) node[right=0.5 cm] {F=3};
+        \draw (0, 2.6) -- (4, 2.6) node[right=0.5 cm] {F=4};
+    % Photons - excitation
+        \draw[decorate,red,->] (0.5,0.2) -- (0.5, 2.6);
+        \draw (0.6, 0.85) node[left=0.2 cm] {cooling};
+        \draw[decorate,red,->] (3.8,-0.1) -- (3.8, 2.2);% repump
+        \draw (3.9, 0.85) node [left=0.2 cm] {repump};
+    % Photons - decay
+        \draw (2.2, 0.85) node [left=0.4 cm, text width=1cm, align=right] {natural\newline decay};
+        \draw[decorate,red,->] (2.3, 2.6) -- (2.3,0.2);
+        \draw[decorate,red,->] (2.1, 2.2) -- (2.1,-0.1);% repump
+    \end{scope}
+\end{tikzpicture}
+\caption[Title]{Caption of Doom.}
+\label{fig:energy_level}
+\end{figure}
+
 
 \section{Electron Generation in the Cold-Atom Electron Source}
 The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides strong control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible as described by McCulluch et. al. \cite{mcculloch_arbitrarily_2011}.
@@ -38,7 +68,7 @@ Two lasers with different wavelengths can be used for efficient ionisation of at
       \draw (1, 2) node[left=0.25cm] {$\hbar\omega_2$};
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{Energy level diagram for atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to the ionisation continuum. Changing $\omega_2$ allows the excess energy of the ionisation process to be adjusted.}
+\caption[Title]{Energy level diagram for atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to the ionisation continuum. Changing $\omega_2$ allows the excess energy of the ionisation process to be adjusted.{\color{red} Move the dotted line to be below the continuum.}}
 \label{fig:energy_level}
 \end{figure}
 
