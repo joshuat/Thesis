@@ -2,10 +2,12 @@
 
 \section{Energy Levels of Rubidium}
 
-go here with a pretty figure
+The \gls{mot} makes use of a closed transition of rubidium in order to create the atomic cloud. The \gls{odt} and absorption imaging also interact with this transition. The various energy levels and transitions are shown in figure \ref{fig:energy_levels}.
 
-\begin{figure}[h]
+\begin{figure}
+\label{fig:energy_levels}
 \centering
+\hspace{10pt}
 \begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
@@ -14,35 +16,46 @@ go here with a pretty figure
         \draw (-0.5, 0.05) node {$5 ^2 S_{3/2}$};
         \draw (0, -0.1) -- (4, -0.1) node[right=0.5 cm] {F=2};
         \draw (0, 0.2) -- (4, 0.2) node[right=0.5 cm] {F=3};
+    % 5 2P1/2
+        \draw (-0.5, 1.0) node {$5 ^2 P_{1/2}$};
+        \draw (0, 1.0) -- (4, 1.0) node[right=0.5 cm] {F=4, 3, 2, 1};        
     % 5 2P3/2
-        \draw (-0.5, 2.05) node {$5 ^2 P_{3/2}$};
-        \draw (0, 1.5) -- (4, 1.5) node[right=0.5 cm] {F=1};
-        \draw (0, 1.8) -- (4, 1.8) node[right=0.5 cm] {F=2};
-        \draw (0, 2.2) -- (4, 2.2) node[right=0.5 cm] {F=3};
-        \draw (0, 2.6) -- (4, 2.6) node[right=0.5 cm] {F=4};
-    % Photons - excitation
-        \draw[decorate,red,->] (0.5,0.2) -- (0.5, 2.6);
-        \draw (0.6, 0.85) node[left=0.2 cm] {cooling};
-        \draw[decorate,red,->] (3.8,-0.1) -- (3.8, 2.2);% repump
-        \draw (3.9, 0.85) node [left=0.2 cm] {repump};
-    % Photons - decay
-        \draw (2.2, 0.85) node [left=0.4 cm, text width=1cm, align=right] {natural\newline decay};
-        \draw[decorate,red,->] (2.3, 2.6) -- (2.3,0.2);
-        \draw[decorate,red,->] (2.1, 2.2) -- (2.1,-0.1);% repump
+        \draw (-0.5, 2.45) node {$5 ^2 P_{3/2}$};
+        \draw (0, 1.9) -- (4, 1.9) node[right=0.5 cm] {F=1};
+        \draw (0, 2.2) -- (4, 2.2) node[right=0.5 cm] {F=2};
+        \draw (0, 2.6) -- (4, 2.6) node[right=0.5 cm] {F=3};
+        \draw[dotted] (0, 2.8) -- (4, 2.8);
+        \draw (0, 3.0) -- (4, 3.0) node[right=0.5 cm] {F=4};
+    % Photons - cycling transition
+        \draw (0.6, 3.4) node[anchor=north] {Cooling};
+        \draw[decorate,red,->] (0.5,0.2) -- (0.5, 2.8);
+        \draw[decorate,red,->] (0.7, 3.0) -- (0.7,0.2);
+    % Forbidden Transitions
+        \draw (2.0, 3.4) node[anchor=north] {Forbidden};
+        \draw[decorate,red,->] (1.9,3.0) -- (1.9, 1.0);
+        \draw[decorate,red,->] (2.1,3.0) -- (2.1, -0.1);
+    % Dark/repump
+        \draw (3.4, 3.4) node[anchor=north] {Repump};
+        \draw[decorate,red,->] (3.3,2.6) -- (3.3, -0.1);
+        \draw[decorate,red,->] (3.5,-0.1) -- (3.5, 2.6);
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{Caption of Doom.}
+\caption[Title]{The energy levels involved in trapping rubidium in a MOT. The first two transitions show the cycling transition that is used by the main cooling lasers in a MOT. The third and forth red lines show two forbidden transitions. If the cooling laser excites to the F=3 level then it is possible for the atom to decay to the `dark' F=2 state. The repump laser serves to restore these atoms to the cycle. The dotted line indicated the detuning required for Doppler cooling.}
 \label{fig:energy_level}
 \end{figure}
 
+The $5 ^2 S_{3/2} F=3\rightarrow5 ^2 P_{3/2} F=4$ transition in rubidium forms a closed loop. Atoms are excited to the F=4 state and then spontaneously decay back to the F=3 state. The atom is forbidden to decay into any of the $5 ^2 P_{1/2}$ states since such a transition would not conserve parity. The excited atoms are also forbidden to decay to the $5 ^2 S_{3/2} F=2$ state since this would require an angular momentum change of 2 which a single photon cannot supply
+
+There is a small chance that an atom absorbing a photon will be excited to the F=3 state after which the atom can decay to either the F=3 ground state or the F=2 `dark' state. If the atoms enters the `dark' state then it no longer interacts with the cooling beams and thus remains in the `dark' state and is no longer trapped. The repump laser is tuned to the $5 ^2 S_{3/2} F=2\rightarrow5 ^2 P_{3/2} F=3$ transition so that atoms can be reintroduced to the cycling transition and remain trapped.
 
 \section{Electron Generation in the Cold-Atom Electron Source}
 The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides strong control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible as described by McCulluch et. al. \cite{mcculloch_arbitrarily_2011}.
 
-Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continium. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
+Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continuum. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
+%\hspace{-10pts}
 \begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
@@ -54,27 +67,26 @@ Two lasers with different wavelengths can be used for efficient ionisation of at
       \draw (0, 2.5) -- (2, 2.5);
       \draw (0, 3) -- (2, 3);
       \draw (0, 3.25) -- (2, 3.25);
-      \draw (0, 3.375) -- (2, 3.375);
-      \draw (0, 3.4375) -- (2, 3.4375);
+      \draw (0, 3.375) node[left=0.4cm] {Rydberg states} -- (2, 3.375);
+      \draw[style=dashed] (0, 3.4375) -- (2, 3.4375);
       \draw (0, 3.5) -- (2, 3.5);
-      \shade[top color=white,bottom color=black] (0, 3.5) rectangle (2, 3.75);
-
-      \draw[style=dashed] (0, 3.6) -- (2, 3.6);
+      \shade[top color=white,bottom color=black] (0, 3.5) rectangle
+        node[above=0.1] {Continuum} (2, 3.75);
 
       \draw[decorate,red,->] (1,0) -- ++(90:1.5);% excitation
-      \draw[decorate,blue,->] (1,1.5) -- ++(90:2.1);% ionisation
+      \draw[decorate,blue,->] (1,1.5) -- (1, 3.4375);% ionisation
 
       \draw (1, 0.75) node[left=0.25cm] {$\hbar\omega_1$};
       \draw (1, 2) node[left=0.25cm] {$\hbar\omega_2$};
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{Energy level diagram for atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to the ionisation continuum. Changing $\omega_2$ allows the excess energy of the ionisation process to be adjusted.{\color{red} Move the dotted line to be below the continuum.}}
+\caption[Title]{Energy level diagram for an atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to a Rydberg state. The atom is then field ionised by the uniform electric field.}
 \label{fig:energy_level}
 \end{figure}
 
 In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms (780.24nm). This resonance results in efficient population transfer to the excited state. The ionisation laser can be set to couple the first excited state to a Rydberg state rather than to the ionisation continuum directly which results in resonant transitions. The resonant transition to a Rydberg state followed by field ionisation induced by the accelerating electric field (see figure \ref{fig:field_ionisation}) is more efficient than other ionisation pathways which rely on non-resonant behaviour. Field ionisation results in free electrons with very little energy ($T\approx10K$\cite{mcculloch_arbitrarily_2011}) and are thus called `cold'.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=2]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
@@ -99,7 +111,7 @@ In the \gls{caes} the excitation laser is resonant to the D2 transition of the t
 
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{The top diagram dipicts an atom excited to a Rydberg state without the presence of an electric field. The lower diagram show the same atom in the presence of an electric field. The electric field distorts the atomic potential in such a way as to allow the atom to become ionised. The solid black lines represent the atomic potential, the dashed lines the zero field ionisation threshhold, the dotted lines the energy of the valence electrons, the blue circles show the elctrons and the red arrow the direction of the electric field.}
+\caption[Title]{The top diagram depicts an atom excited to a Rydberg state without the presence of an electric field. The lower diagram show the same atom in the presence of an electric field. The electric field distorts the atomic potential in such a way as to allow the atom to become ionised. The solid black lines represent the atomic potential, the dashed lines the zero field ionisation threshold, the dotted lines the energy of the valence electrons, the blue circles show the electrons and the red arrow the direction of the electric field.}
 \label{fig:field_ionisation}
 \end{figure}
 
@@ -124,7 +136,7 @@ The induced dipole moment, $\boldsymbol p$ has an interaction potential with the
 \begin{equation}\label{eq:interaction_pot}
 U_{dip} = - \frac{1}{2} \langle \boldsymbol{pE} \rangle = - \frac{1}{2 \epsilon_0 c} Re(\alpha)I,
 \end{equation}
-where the time average over the rapidly oscillating terms is indicated by the angle brackers, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $\frac{1}{2}$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
+where the time average over the rapidly oscillating terms is indicated by the angle brackets, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $\frac{1}{2}$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
 \begin{equation}\label{eq:dipole_force}
 \boldsymbol F_{dip}(\boldsymbol r ) = - \nabla U_{dip}(\boldsymbol r) = \frac{1}{2 \epsilon_0 c} Re(\alpha) \nabla I(\boldsymbol r).
 \end{equation}
@@ -236,7 +248,7 @@ In order to determine the spatial distribution of the atoms at a given time tech
 
 \subsection{Fluorescence Imaging}
 
-Near resonant light passing through atom clouds (such as the optical mollasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
+Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
 
 {\color{red} diagram}
 {\color{red} i should probably define destructive and non-destructive imaging methods}
@@ -260,7 +272,7 @@ The strong interaction between the laser and the atoms means that with a `fragil
 %}
 \end{figure}
 
-\subsubsection{Absorption Imaging Analysis}
+\subsection{Absorption Imaging Analysis}
 
 If $I_0$ is an image of the probe beam taken while there are no atoms present and $I$ is an image of the probe beam with the atoms present then the transmission function for the atoms, $T$, can be calculated with
 
@@ -269,8 +281,8 @@ I = T I_0.
 \end{equation}
 Each point in $T$ corresponds to the integrated column density of the atoms in the cloud at that point and this information can be used to determine a number of different metrics such as the temperature of the atoms and the total number of atoms.
 
-\subsubsection{MOT Temperature}
-An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimensional density can be modeled by
+\subsection{MOT Temperature}
+An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimensional density can be modelled by
 \begin{equation}\label{eq:gaussian_density}
 \rho (x, y) = \rho_0\exp\left(\frac{x^2}{\sigma_x^2} + \frac{y^2}{\sigma_y^2}\right)
 \end{equation}
@@ -280,15 +292,15 @@ If the trapping lasers and magnetic fields are turned off the atom-cloud should 
 \begin{equation}\label{eq:temp_velocity}
 v_0 = \sqrt{\frac{2k_BT}{m_{Rb}}}
 \end{equation}
-where $k_B$ is Boltzmann's constant and $m_{Rb}$ is the mass of rubidium. The radius of the atom cloud, $r$, at time $t$ after it has been released is given by
+where $k_B$ is Boltzmann's constant and $m_{Rb}$ is the mass of rubidium. The 1/e radius of the atom cloud, $r$, at time $t$ after it has been released is given by
 \begin{equation}\label{eq:cloud_radius}
 r(t) = \sqrt{r_0^2 + (v_0t)^2}.
 \end{equation}
-Here $r_0$ is the initial 1/e spatial radius of the cloud.
+Here $r_0$ is the initial 1/e radius of the cloud.
 
 The temperature can be calculated by taking a number of absorption images for various values of $t$ and then fitting each of the atomic distributions to equation \ref{eq:gaussian_density}. The various cloud radii can then be fitted to equation \ref{eq:cloud_radius} and a temperature can then be calculated with equation \ref{eq:temp_velocity}.
 
-\subsubsection{Atom Count}
+\subsection{Atom Count}
 
 %http://qwiki.stanford.edu/index.php/BEC_How_To
 
@@ -340,7 +352,7 @@ The pixel scale factor can be calculated by placing an object with known dimensi
 
 \subsection{Other Imaging Methods}
 
-There are a number of other imaging techniques that can be used to image cold-atom clouds some of which are destructive and some are non-destructive. The non-destructive methods are particularly useful for imaging delicate systems such as \glspl{bec}. An example of a minimally destructive technique is diffractive contrast imaging \cite{sheludko_excited-state_2007}. There are other techniques such as diffractive dark-ground imaging\cite{gregory-orfeus_diffractive_2011} and phase contrast imaging\cite{andrews_propagation_1997}. Each of these techniques has it's own useful properties but few are as simple to setup and perform as absorption and fluorescence imaging.
+There are a number of other imaging techniques that can be used to image cold-atom clouds some of which are destructive and some are non-destructive. The non-destructive methods are particularly useful for imaging delicate systems such as \glspl{bec}. An example of a minimally destructive technique is diffraction contrast imaging \cite{sheludko_excited-state_2007}. There are other techniques such as diffractive dark-ground imaging\cite{gregory-orfeus_diffractive_2011} and phase contrast imaging\cite{andrews_propagation_1997}. Each of these techniques has it's own useful properties but few are as simple to setup and perform as absorption and fluorescence imaging.
 
 
 \section{Trap Stability}

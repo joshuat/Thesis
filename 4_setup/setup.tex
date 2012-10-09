@@ -1,6 +1,6 @@
 \chapter{Experiment}
 
-The \gls{caes} at the University of Melbourne has be assembled over a number of years. The experimental cycle can be divided into several parts which will be briefly descibed in this chapter. More details of the various experimental apparatus can be found in the group's recent papers \cite{bell_slow_2010, mcculloch_arbitrarily_2011, saliba_spatial_2012} and theses \cite{mcculloch_electron_2012, sheludko_shaped_2010, saliba_partially_2011}.
+The \gls{caes} at the University of Melbourne has be assembled over a number of years. The experimental cycle can be divided into several parts which will be briefly descibed in this chapter. More details of the various experimental apparatus can be found in the group's recent papers \cite{bell_slow_2010, mcculloch_arbitrarily_2011, saliba_spatial_2012} and theses \cite{mcculloch_towards_2012, sheludko_shaped_2010, saliba_partially_2011}.
 
 
 \section{Magneto-Optic Trap}
@@ -26,26 +26,42 @@ The Zeeman slower cools the atoms atoms from having a velocity of order 300m/s t
 
 An Eagleyards tapered amplifier seeded with light from two \glspl{ecdl} is used for the doppler cooling. The first \gls{ecdl} produces the cooling light and the second is used to repump any atoms that fall into a dark state.
 
+The \gls{ecdl} is locked on to the appropriate frequency using a saturated absorption configuration\cite{maguire_theoretical_2006}.
 
-    \subsection{Quasi-Mirror Magneto-Optic Trap}
+\subsection{Quasi-Mirror Magneto-Optic Trap}
+\glspl{mot} have been used extensively in atom-optics laboratories to trap and cool atoms of many species. The physics of \glspl{mot} is well documented and understood\cite{metcalf_laser_1999}.
 
-Six beams etc. Near resonance. Magnetic field anti-Helmholtz.
+A conventional \gls{mot} consists of six beams which are able to damp the velocity of atoms is all directions where the beam overlap. A simpler design using only four beams is the ``mirror-MOT''. Mirror-MOTs typically suffer from a reduced trapping volume\cite{reichel_atomic_1999}.
 
-\begin{figure}
+In the \gls{caes} the accelerating structure required to extract the electron bunches is integrated with the mirror-MOT, ``Quasi-Mirror Magneto-Optical Trap'' (QMMOT)\cite{hanssen_using_2006}. Figure \ref{fig:qmmot} shows a schematic of the QMMOT where one of the plates is transmissive and the other reflective and both can be charged to provide the accelerating electric field.
+
+\begin{figure}[h]
+\label{fig:qmmot}
 \centering
 \includegraphics[width=0.45\textwidth]{figs/qMMOT.jpg}
 \caption{{\color{red}Also taken from Andy's thesis.}}
 \end{figure}
 
+The laser power for the \gls{mot} is supplied by a Toptica \gls{ta} seeded by the cooling and repump \glspl{ecdl} which are locked onto the appropriate atomic transistions using saturated absorption setups. A pair of magnetic coils external to the vacuum system in an anti-Helpholtz configuration proved the magnetic fields for the \gls{mot}.
+
 \section{Electron Generation}
-text
-    \subsection{Excitation}
-text
-        \subsubsection{ns}
-text
-        \subsubsection{fs}
-text
+
+The generation of electrons is a central part of the \gls{caes} and each of the two stages has its own light source.
+
+\subsection{Excitation}
+
+The excitation of the atoms in the cloud can be done in one of two ways in the \gls{caes}. The first method of excitation is a $50\,\unit{\mu s}$ exposure of light from an \gls{ecdl} and the second method is to use a pulse from a Newport 3960 fs Tsunami which is able to produce $35\,\unit{fs}$ long bunches.
+
+\subsubsection{ECDL Excitation}
+
+The \gls{ecdl} is locked onto the $5 ^2 S_{3/2} F=3\rightarrow5 ^2 P_{3/2} F=4$ transition of rubidium using saturated absorption and the exposure is controlled with an \gls{aom}. The excitation \gls{ecdl} beam shares much of its beam path with that of the femtosecond laser and a mirror on a flip mount is used to determine which used for excitation at a given time.
+.
+\subsubsection{Femtosecond Excitation}
+
+The Newport 3960 fs Tsunami produces approximately $80\,\unit{fs}$ long pulses of light with a wavelength centered around $800\,\unit{nm}$ with a $20\,\unit{nm}$ linewidth.\cite{mcculloch_towards_2012}
+
     \subsection{Shaping}
+
 text
     \subsection{Ionisation}
 text
