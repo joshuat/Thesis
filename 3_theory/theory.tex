@@ -250,6 +250,9 @@ In order to determine the spatial distribution of the atoms at a given time tech
 
 Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
 
+%\begin{figure}[h]
+%\includegraphics{figs/uglyflourescence.png}
+%\end{figure}
 {\color{red} diagram}
 {\color{red} i should probably define destructive and non-destructive imaging methods}
 
@@ -325,7 +328,7 @@ By integrating across the image we obtain
 \begin{equation}
 \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{\sigma}D(x, y) dx dy = N.
 \end{equation}
-Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, so The integrals can be written as sums giving
+Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, so the integrals can be rewritten as sums giving
 \begin{equation}
 N = A \sum_{(x, y)} \frac{1}{\sigma}D(x, y)
 \end{equation}
