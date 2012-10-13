@@ -250,25 +250,112 @@ In order to determine the spatial distribution of the atoms at a given time tech
 
 Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
 
-%\begin{figure}[h]
-%\includegraphics{figs/uglyflourescence.png}
-%\end{figure}
-{\color{red} diagram}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+    \begin{scope}[decoration={snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
+        \draw (-3.2, 0) node[rotate=90] {Probe Beam};
+        \shade[bottom color=red, top color=white] (-3,0.35) rectangle (3, 0.75);
+        \shade[top color=red] (-3,-0.34) rectangle (3, -0.75);
+        \fill[color=red] (-3, 0.36) rectangle (3, -0.35);
+
+        \draw[thick, ->] (-2.5, 0) -- (-1.5, 0);
+
+        \shade[top color=red] (-0.01,-0.01) rectangle (3, 0.35);
+        \shade[bottom color=red, top color=white] (-0.01,0.01) rectangle (3, -0.35);
+
+        \draw[thick, decorate,blue,->] (0,0) -- ++(0:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(30:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(60:0.866);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(90:0.75);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(120:0.866);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(150:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(180:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(210:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(240:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(270:1.2);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(300:1.25);
+        \draw[thick, decorate,blue,->] (0,0) -- ++(330:1.25);
+
+        \draw[thick, decorate,blue,->] (-3,-1.7) --
+            node[above, black] {\small Fluorescence} ++(0:1.25);
+
+        \filldraw[fill=gray, draw=black] (-1,-1.3) rectangle
+            node[color=black] {Detector} (1,-1.8);
+        \filldraw[fill=gray, draw=black] (-0.9,-1.2) rectangle (0.9, -1.3);
+
+        \draw (0, 0.75) node[above] {Atom Cloud};
+        \shade[ball color=brown] (0.0, 0.0) circle (0.1);
+        \shade[ball color=brown] (0.05, 0.1) circle (0.1);
+        \shade[ball color=brown] (-0.08, 0.2) circle (0.1);
+        \shade[ball color=brown] (0.1, -0.05) circle (0.1);
+        \shade[ball color=brown] (-0.1, -0.05) circle (0.1);
+        \shade[ball color=brown] (-0.2, 0.1) circle (0.1);
+        \shade[ball color=brown] (0.15, 0.23) circle (0.1);
+        \shade[ball color=brown] (0.05, -0.2) circle (0.1);
+        \shade[ball color=brown] (-0.17, -0.18) circle (0.1);
+        \shade[ball color=brown] (0.22, 0.13) circle (0.1);
+        \shade[ball color=brown] (0.20, 0.04) circle (0.1);
+        \shade[ball color=brown] (0.00, 0.25) circle (0.1);
+    \end{scope}
+\end{tikzpicture}
+\caption{This diagram shows fluorescence imaging. Light from the on-resonance probe beam is absorbed by the atoms and then reemitted in all directions as fluorescence. This light is captured by the detector.}
+\end{figure}
 {\color{red} i should probably define destructive and non-destructive imaging methods}
 
 Fluorescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the fluorescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from fluorescence imaging will not be detectable.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/fluorescence.png}
+\caption{{\color{red}another caption}}
+\end{figure}
 \subsection{Absorption Imaging}
 
 Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. In absorption imaging a collimated probe laser is directed through the atoms and onto the detector. As in fluorescence imaging the photons will be absorbed and reemitted in random directions. After the light has passed through the atoms a `shadow' due to the photons absorbed by the atoms will be left in the probe beam.
 
-{\color{red} diagram}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+    \begin{scope}
+        \draw (-3.2, 0) node[rotate=90] {Probe Beam};
+        \shade[bottom color=red, top color=white] (-3,0.35) rectangle (3, 0.75);
+        \shade[top color=red] (-3,-0.34) rectangle (3, -0.75);
+        \fill[color=red] (-3, 0.36) rectangle (3, -0.35);
+
+        \draw[thick, ->] (-2.5, 0) -- (-1.5, 0);
+
+        \shade[top color=red] (-0.01,-0.01) rectangle (3, 0.35);
+        \shade[bottom color=red, top color=white] (-0.01,0.01) rectangle (3, -0.35);
+
+        \filldraw[fill=gray, draw=black] (3,1) rectangle
+            node[color=black, rotate=90] {Detector} (3.5, -1);
+        \filldraw[fill=gray, draw=black] (2.9,0.8) rectangle (3, -0.8);
+
+        \draw (0, 0.75) node[above] {Atom Cloud};
+        \shade[ball color=brown] (0.0, 0.0) circle (0.1);
+        \shade[ball color=brown] (0.05, 0.1) circle (0.1);
+        \shade[ball color=brown] (-0.08, 0.2) circle (0.1);
+        \shade[ball color=brown] (0.1, -0.05) circle (0.1);
+        \shade[ball color=brown] (-0.1, -0.05) circle (0.1);
+        \shade[ball color=brown] (-0.2, 0.1) circle (0.1);
+        \shade[ball color=brown] (0.15, 0.23) circle (0.1);
+        \shade[ball color=brown] (0.05, -0.2) circle (0.1);
+        \shade[ball color=brown] (-0.17, -0.18) circle (0.1);
+        \shade[ball color=brown] (0.22, 0.13) circle (0.1);
+        \shade[ball color=brown] (0.20, 0.04) circle (0.1);
+        \shade[ball color=brown] (0.00, 0.25) circle (0.1);
+
+    \end{scope}
+\end{tikzpicture}
+\caption{This diagram shows absorption imaging. The on-resonance probe beam propagating from left to right passes through the atom cloud. The atoms absorb some of the light and the shadow is visible on the detector.}
+\end{figure}
 
 The signal from absorption imaging is much stronger than that for fluorescence however it is not possible to get quantitative information for dense clouds of atoms due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
 
 The strong interaction between the laser and the atoms means that with a `fragile' trap this imaging technique will give many of the atoms enough energy to escape the trap.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=18cm]{figs/absorptionexample.pdf}
 \caption{The above images are an example of absorption imaging.  The image on the left is that of the on-resonance probe beam taken while the magnetic trapping of the magneto-optic trap was turned off and no atoms were trapped. The centre image shows the probe beam after it had passed through the atom-cloud of the normal magneto-optic trap and the corresponding shadow is clearly visible. The transmission function of the atoms (see equation \ref{eq:transmission_function_1}) is shown in the right image.}
@@ -309,15 +396,15 @@ The temperature can be calculated by taking a number of absorption images for va
 
 It is useful to know the number of atoms in a given absorption image. To do this we need to know the magnification of the optical system in front of the detector as well as the power of the probe laser.
 
-As the probe laser traverses through the atoms cloud its intensity obeys Beer's law{\color{red} citation},
+As the probe laser traverses through the atoms cloud its intensity obeys Beer's law\cite{foot_atomic_2005}
 \begin{equation}\label{eq:beers_law}
 I(x, y) = I_0(x, y)e^{-D(x, y)}
 \end{equation}
-where $I_0(x, y)$ is the intensity of the beam before the cloud, $I(x, y)$ is the intensity after the cloud and $D(x, y)$ is the optical depth along the probe beam's axis. The coordinates $(x, y)$ denote a given position in the plane perpendicular to the probe beam. The optical density is given by{\color{red} citation}
+where $I_0(x, y)$ is the intensity of the beam before the cloud, $I(x, y)$ is the intensity after the cloud and $D(x, y)$ is the optical depth along the probe beam's axis. The coordinates $(x, y)$ denote a given position in the plane perpendicular to the probe beam. The optical density is given by
 \begin{equation}\label{eq:optical_density}
 D(x, y) = \sigma \int_{-\infty}^{\infty}n(x, y, z)dz.
 \end{equation}
-Here $\sigma$ is the absorption cross-section and $n(x, y, z)$ is the atomic density distribution. The details of $n(x, y, z)$ are unimportant for many applications where only the total number of atoms, $N$, is required.
+Here $\sigma$ is the absorption cross-section and $n(x, y, z)$ is the atomic density distribution.
 
 Using equations \ref{eq:beers_law} and \ref{eq:optical_density} we can get
 \begin{equation}
@@ -328,11 +415,11 @@ By integrating across the image we obtain
 \begin{equation}
 \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{\sigma}D(x, y) dx dy = N.
 \end{equation}
-Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, so the integrals can be rewritten as sums giving
-\begin{equation}
-N = A \sum_{(x, y)} \frac{1}{\sigma}D(x, y)
+Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, so the integrals can be rewritten as sums over the pixels giving
+\begin{equation}\label{eq:atom_sum}
+N = \sum_{(x, y)} \frac{1}{\sigma}D(x, y)A_{pixel}
 \end{equation}
-where $A$ is the scaled area of the detector.
+where $A_{pixel}$ is the scaled area of the a pixel.
 
 The absorption cross-section is given by \cite{steck_rubidium_2001},
 \begin{equation}\label{eq:cross_section}
@@ -342,16 +429,16 @@ where $\Delta$ is the frequency detuning of the pump light ($\Delta=0$ for on-re
 \begin{equation}
 \sigma_0 = \frac{\hbar\omega\Gamma}{2I_s}.
 \end{equation}
-If on-resonant light with an intensity much less than the saturation intensity is used $\sigma \approx \sigma_0$ and
+
+Combining equations \ref{eq:atom_sum} and \ref{eq:cross_section} provides
 \begin{equation}
-N = -\frac{A}{\sigma_0} \sum_{(x, y)} \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right).
+N = -\frac{A_{pixel}}{\sigma_0} \sum_{(x, y)} (1+(I(x, y)/I_s)) \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right)
 \end{equation}
-If the low-intensity condition is not satisfied then the following must be used
+for on-resonant light. If on-resonant light with an intensity much less than the saturation intensity is used then $\sigma \approx \sigma_0$ and
 \begin{equation}
-N = -A \sum_{(x, y)} \frac{1+(I(x, y)/I_s)}{\sigma_0} \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right).
+N = -\frac{A_{pixel}}{\sigma_0} \sum_{(x, y)} \log_e\left(\frac{I(x, y)}{I_0(x, y)}\right).
 \end{equation}
 
-The pixel scale factor can be calculated by placing an object with known dimensions (such as a ruler) at the object plane and then determining the number of pixels taken up by the object. Simply multiplying the pixel scale factor squared by the area of the probe beam on the detector to get $A$.
 
 \subsection{Other Imaging Methods}
 
