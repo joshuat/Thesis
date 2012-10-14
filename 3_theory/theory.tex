@@ -1,5 +1,7 @@
 \chapter{Theory}
 
+This chapter describe the theory involved in designing and imaging an \gls{odt}. The energy levels of rubidium are briefly discussed to lay a groundwork for theory and discussions on trapping and imaging. The \gls{caes}'s method of electron generation is also discussed so to provide a context for electron beam metrics and considerations. The theory of \glspl{odt} and some simulations are as well as cold atom imaging methods are also included here as these are core parts of the project.
+
 \section{Energy Levels of Rubidium}
 
 The \gls{mot} makes use of a closed transition of rubidium in order to create the atomic cloud. The \gls{odt} and absorption imaging also interact with this transition. The various energy levels and transitions are shown in figure \ref{fig:energy_levels}.
@@ -243,7 +245,7 @@ T_{eff}(r, z) = \frac{2}{3 k_B} U(r, z)
 \end{equation}
 where $U$ is the potential and $k_B$ is Boltzmann's constant.
 
-\begin{figure}
+\begin{figure}[h!]
 \label{fig:dipolepotential}
 \centering
 \includegraphics[width=18cm]{figs/dipolepotential.pdf}
@@ -254,17 +256,72 @@ where $U$ is the potential and $k_B$ is Boltzmann's constant.
 
 \subsection{lifetime}
 
-{\color{red} hmmm what to do here....}
+{\color{red} hmmm what to do here....
+
+Lifetime probably obeys the following equation,
+\begin{equation}
+N(t) = N_0 e^{-\lambda t}
+\end{equation}
+where $N_0$ is the number of atoms at time $t=0$ and $\lambda$ is the decay rate.
+}
+
 
 \subsection{Configuration}
 
-The simplest form of optical dipole trap consists of a single focussed Gaussian beam that can trap atoms at the focus. These simple traps have been used since the 1980s\cite{chu_experimental_1986} and are frequently used to form \glspl{bec} and atom lasers\cite{chikkatur_continuous_2002, kleine_buning_slow_2010, lin_rapid_2009}.
+The simplest form of optical dipole trap consists of a single focussed Gaussian beam that traps atoms at the focus. These simple traps have been used since the 1980s\cite{chu_experimental_1986} and are frequently used to form \glspl{bec} and atom lasers\cite{chikkatur_continuous_2002, kleine_buning_slow_2010, lin_rapid_2009}.
 
-Single beam traps have strong confinement in the direction perpendicular to the beam and relatively weak confinement along the beam. A trap with strong confinement in all directions can be created by crossing two beams. Crossed beam traps are used frequently to produce \glspl{bec} \cite{couvert_quasi-monomode_2008, arnold_all-optical_2011, fu_bose-einstein_2011, barrett_all-optical_2001, xiong_evaporative_2010}.
+Single beam traps have strong confinement in the direction perpendicular to beam propagation and relatively weak confinement along the beam. A trap with strong confinement in all directions can be created by crossing two beams. Crossed beam traps are used frequently to produce \glspl{bec} \cite{couvert_quasi-monomode_2008, arnold_all-optical_2011, fu_bose-einstein_2011, barrett_all-optical_2001, xiong_evaporative_2010}. The polarisation of the two beam must be orthogonal in order to avoid the creation of standing waves.
 
-{\color{red} diagram!}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\begin{tikzpicture}
+    \begin{scope}
+        \shade[shading=radial, inner color=red, outer color=white] (-3,-1.581) -- (-3,1.581) -- plot[domain=-3:3] (\x, {0.3*sqrt(1+\x*\x)}) -- (3,1.581) -- (3,-1.581) -- plot[domain=3:-3] (\x, {-0.3*sqrt(1+\x*\x)}) -- cycle;
+        \shade[ball color=brown] (0.0, 0.0) circle (0.05);
+        \shade[ball color=brown] (0.025, 0.05) circle (0.05);
+        \shade[ball color=brown] (-0.04, 0.1) circle (0.05);
+        \shade[ball color=brown] (0.05, -0.025) circle (0.05);
+        \shade[ball color=brown] (-0.05, -0.025) circle (0.05);
+        \shade[ball color=brown] (-0.1, 0.05) circle (0.05);
+        \shade[ball color=brown] (0.075, 0.115) circle (0.05);
+        \shade[ball color=brown] (0.025, -0.1) circle (0.05);
+        \shade[ball color=brown] (-0.085, -0.09) circle (0.05);
+        \shade[ball color=brown] (0.11, 0.065) circle (0.05);
+        \shade[ball color=brown] (0.10, 0.02) circle (0.05);
+        \shade[ball color=brown] (0.00, 0.125) circle (0.05);
+    \end{scope}
+\end{tikzpicture}
+\vspace{40pt}
+\caption{A single beam optical dipole trap.}
+\end{subfigure}\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\begin{tikzpicture}
+    \begin{scope}
+        \shade[shading=radial, inner color=red, outer color=white] (-3,-1.581) -- (-3,1.581) -- plot[domain=-3:3] (\x, {0.15*sqrt(1+\x*\x)}) -- (3,1.581) -- (3,-1.581) -- plot[domain=3:-3] (\x, {-0.15*sqrt(1+\x*\x)}) -- cycle;
+       \shade[shading=radial, inner color=red, outer color=white] (-1.581,-3) -- (1.581,-3) -- plot[domain=-3:3] ({0.15*sqrt(1+\x*\x)}, \x) -- (1.581,3) -- (-1.581,3) -- plot[domain=3:-3] ({-0.15*sqrt(1+\x*\x)}, \x) -- cycle;
+        \shade[ball color=brown] (0.0, 0.0) circle (0.05);
+        \shade[ball color=brown] (0.025, 0.05) circle (0.05);
+        \shade[ball color=brown] (-0.04, 0.1) circle (0.05);
+        \shade[ball color=brown] (0.05, -0.025) circle (0.05);
+        \shade[ball color=brown] (-0.05, -0.025) circle (0.05);
+        \shade[ball color=brown] (-0.1, 0.05) circle (0.05);
+        \shade[ball color=brown] (0.075, 0.115) circle (0.05);
+        \shade[ball color=brown] (0.025, -0.1) circle (0.05);
+        \shade[ball color=brown] (-0.085, -0.09) circle (0.05);
+        \shade[ball color=brown] (0.11, 0.065) circle (0.05);
+        \shade[ball color=brown] (0.10, 0.02) circle (0.05);
+        \shade[ball color=brown] (0.00, 0.125) circle (0.05);
+    \end{scope}
+\end{tikzpicture}
+\caption{A crossed beam optical dipole trap.}
+\end{subfigure}
+\end{figure}
 
-{\color{red}remember to mention polarisation stuff for the crossed beam trap}
+\subsection{Simulation}
+
+{\color{red}Need to include some more graphs showing how the trap parameters were selected.}
 
 \section{Imaging}
 
@@ -274,7 +331,7 @@ Some imaging methods are able to generate images of the atoms under examination 
 
 \subsection{Fluorescence Imaging}
 
-Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scatter photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
+Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scattered photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
 
 \begin{figure}[h]
 \centering
@@ -469,9 +526,6 @@ N = -\frac{A_{pixel}}{\sigma_0} \sum_{(x, y)} \log_e\left(\frac{I(x, y)}{I_0(x, 
 
 There are a number of other imaging techniques that can be used to image cold-atom clouds some of which are destructive and some are non-destructive. The non-destructive methods are particularly useful for imaging delicate systems such as \glspl{bec}. An example of a minimally destructive technique is diffraction contrast imaging \cite{sheludko_excited-state_2007}. There are other techniques such as diffractive dark-ground imaging\cite{gregory-orfeus_diffractive_2011} and phase contrast imaging\cite{andrews_propagation_1997}. Each of these techniques has it's own useful properties but few are as simple to setup and perform as absorption and fluorescence imaging.
 
-
-\section{Trap Stability}
-{\color{red} not sure what to do here - might drop this section}
 \section{Stability of the Electron Signal}
 
 The stability of the electron signal incident on the detector can be analysed fairly simple. For a given iteration, $i$, of the experiment the electron signal will have an average spatial centre given by
@@ -490,5 +544,3 @@ The average of a set of measurements, $\bar{\boldsymbol{x}}$, and the associated
 \end{equation}
 
 These simple calculations can be used to analyse the spatial variation of the electron signal and the variance can be used as a metric for determining whether the stability of the source is being improved by changes.
-
-{\color{red} any other cunning stats tricks for this?}
