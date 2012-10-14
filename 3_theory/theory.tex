@@ -54,8 +54,8 @@ The \gls{caes} uses two stage photoionisation as its primary method of electron 
 Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continuum. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
 
 \begin{figure}[h]
-\centering
-%\hspace{-10pts}
+
+\hspace{0.235\textwidth}
 \begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
@@ -102,7 +102,7 @@ In the \gls{caes} the excitation laser is resonant to the D2 transition of the t
 
     \filldraw[fill=blue] (0, -0.1) circle (0.05);
     \draw [color=black, dotted] (-1.4, -0.1) -- (1.4, -0.1);
-    \draw [color=blue, above=4, ->] (0.2, -0.1) -- (1.4, -0.1);
+    \draw [color=blue, above=4, ->] (0.2, -0.13) -- (1.4, -0.13);
     \draw [color=red, ->] (-0.5, -1.1) -- (0.5, -1.1) node [right] {\small $\vec{E}$};
     \draw [dashed, color=gray] (-1.4, 0) node[color=black, left] {\small $V=0$} -- (1.4, 0);
 
@@ -155,7 +155,7 @@ The complex part of the polarisability gives the out of phase component of the d
 
 \subsection{Atomic Polarisability}
 
-The atomic polarisability, $\alpha$ can be calculated by using Lorentz's model for a classical oscillator {\color{red} citation please}. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
+The atomic polarisability, $\alpha$ can be calculated by using Lorentz's model for a classical oscillator. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
 
 The polarisability can be calculated if the equation of motion, $\ddot{x} + \gamma \dot{x} + \omega_0^2 x = -eE(t)/m_e$, is integrated for the driven oscillation of the electron to give
 \begin{equation} \label{eq:polarisability}
@@ -204,14 +204,38 @@ I(r, z) = I_0 \left( \frac{w_0}{w(z)}\right)^2 e^{-2r^2/w(z)^2}
 \end{equation}
 where $I_0$ is the intensity at the centre of the focal point, $w_0$ is the beam waist at the focus and the beam waist $w(z)$ is
 \begin{equation}
-W(z) = \sqrt{1 + \left(\frac{z}{z_0} \right)^2}.
+w(z) = w_0\sqrt{1 + \left(\frac{z}{z_0} \right)^2}.
 \end{equation}
 Here $z_0$ is the Rayleigh length and is given by
 \begin{equation}
 z_0 = \frac{\pi w_0^2}{\lambda}.
 \end{equation}
 
-{\color{red} Gaussian beam diagram? <- only if time permits}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+    \begin{scope}[thick]
+        \draw[red] plot[domain=-3:3] (\x, {0.5*sqrt(1+\x*\x)});
+        \draw[red] plot[domain=-3:3] (\x, {-0.5*sqrt(1+\x*\x)});
+
+        \draw[gray, ->] (-3,0) -- (3,0) node[right] {$z$};
+
+        \draw[<->] (0,0) -- node[left] {\small $w_0$} (0,0.5);
+
+        \draw[<->] (1.5,0) -- node[left] {\small $w(z)$} (1.5,0.9);
+
+        \draw[<->] (-1.0,0.0) -- node[left] {\small $\sqrt{2}w_0$} (-1.0,0.707);
+
+        \draw[dotted] (0,0) -- (0,-1);
+        \draw[dotted] (-1,0) -- (-1,-1);
+
+        \draw[<->] (-1,-1) -- node[below] {\small $z_0$} (0,-1);
+
+    \end{scope}
+\end{tikzpicture}
+
+\caption{Gaussian beam width, $w(z)$, along the beam propagation axis, $z$. $w_0$ is the beam waist, $z_0$ is the Rayleigh length.}
+\end{figure}
 
 These equations can be used to simulate an \gls{odt}. Using the light sources similar to those described in chapter 3 we can create generate the potential depicted in figure \ref{fig:dipolepotential}. The potential has been converted to an effective temperature, $T_{eff}$ using
 \begin{equation}
@@ -245,6 +269,8 @@ Single beam traps have strong confinement in the direction perpendicular to the 
 \section{Imaging}
 
 In order to determine the spatial distribution of the atoms at a given time techniques for imaging are required. Numerous techniques for imaging are available the simplest of which are fluorescence and absorption imaging.
+
+Some imaging methods are able to generate images of the atoms under examination without strong interactions that interfere with the atoms' state. These methods are known as non-destructive. Destructive methods on the otherhand will distrupt the atoms to varying degrees.
 
 \subsection{Fluorescence Imaging}
 
@@ -301,14 +327,13 @@ Near resonant light passing through atom clouds (such as the optical molasses la
 \end{tikzpicture}
 \caption{This diagram shows fluorescence imaging. Light from the on-resonance probe beam is absorbed by the atoms and then reemitted in all directions as fluorescence. This light is captured by the detector.}
 \end{figure}
-{\color{red} i should probably define destructive and non-destructive imaging methods}
 
 Fluorescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the fluorescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from fluorescence imaging will not be detectable.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{figs/fluorescence.png}
-\caption{{\color{red}another caption}}
+\includegraphics[width=0.3\textwidth]{figs/fluorescence.pdf}
+\caption{A short exposure fluorescence image of the CAES MOT.}
 \end{figure}
 \subsection{Absorption Imaging}
 

@@ -15,7 +15,6 @@ Determining the structure of theses molecules is a key step in understanding the
 The development of new imaging techniques, such as ultrafast single shot diffraction, and new light sources, such as \glspl{xfel}, have been driven by the goal of overcoming the limitations of x-ray crystallography. Ultrafast single-shot diffraction imaging also has the potential to able to determine the dynamic structure of biological molecules.
 
 
-
 \subsection{Ultrafast, single-shot, coherent diffractive imaging with electrons}
 
 X-ray diffraction from crystals was first observed a century ago\cite{bragg_x-rays_1912} and resulted in a Nobel prize being awarded to William Bragg and his son. Since then \gls{cdi} has been performed on a myriad of different samples with coherent beams of x-rays and electrons.
@@ -24,7 +23,15 @@ Ultrafast, single-shot imaging requires a very bright source of radiation in ord
 
 With femtosecond timescale single-shot imaging it is possible to observe such things as molecular vibration and dynamic chemical processes\cite{zewail_4d_2006}. With the sophisticated imaging techniques currently in development around the world and the continued improvement of radiation sources it will become possible to create `molecular movies'\cite{dwyer_femtosecond_2006} of these processes. Unfortunately, the brightnesses required for single shot imaging with electrons requires multi-billion-dollar \gls{xfel} facilities.
 
-Electron sources however may be able to provide cheaper alternatives. Electron interactions with molecules are significantly stronger than those of x-rays. For similar energies the electron interaction with a sample is $10^5-10^6$ times stronger than that of x-rays\cite{sciaini_femtosecond_2011}. This means that while a huge facility is required to generate x-ray light of sufficient brightness a table-top source of electrons may be able to provide bright enough radiation for \gls{cdi}.
+Electron sources however may be able to provide cheaper alternatives. Electron interactions with molecules are significantly stronger than those of x-rays. For similar energies the electron interaction with a sample is $10^5-10^6$ times stronger than that of x-rays\cite{sciaini_femtosecond_2011}. This means that while a huge facility is required to generate x-ray light of sufficient brightness a table-top source of electrons may be able to provide bright enough radiation for ultrafast \gls{cdi}.
+
+\Gls{cdi} requires that the source have a coherence length greater than the length of the structures under investigation. For an quasi-homogeneous electron bunch the transverse coherence length, $L_c$, is\cite{van_oudheusden_electron_2007}
+\begin{equation}
+L_c = \hbar/\sqrt{m_e k_B T}.
+\end{equation}
+where $m_e$ is the mass of an electron and $T$ is the temperature of the electrons. The problem with conventional electron sources (such as electron guns, photocathode sources and field emission sources) is the temperature of the electrons produced. Most electron sources produce electrons with high temperatures which results in low coherence lengths and are thus not appropriate for \gls{cdi}. However the procedure used in the \gls{caes} to produce electrons results in low temperature bunches being prodeced which are suitable for \gls{cdi}. The \gls{caes} also provides the ability to mitigate expansion due to space charge effects with electron bunch shaping\cite{mcculloch_arbitrarily_2011}.
+
+Sources such as those used in electron microscopes are able to do \gls{cdi}. The electron currents used are unfortunately too small to be able to do single-shot imaging.
 
 \section{Melbourne cold-atom electron source}
 
