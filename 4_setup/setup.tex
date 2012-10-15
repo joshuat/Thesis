@@ -126,14 +126,31 @@ There is a limited amount of optical access to the \gls{mot} available and the \
 
 The distance from one window to the opposite is $412.3\,\unit{mm}$ and the \gls{mot} should be situated halfway between them. The objective lens\footnote{Thorlabs AC508-250-B-ML f=$250\,\unit{mm}$} have a focal length of $250\,\unit{mm}$ which gives sufficient space to allow for adjustments of the beam waists. After the window of the first beam is another $250\,\unit{mm}$ lens to re-collimate the beam. This collimated beam is then propagated through free space to the second beam axis.
 
-The second beam axis is shared with the nanosecond-pulse ionisation laser. A long-pass dichroic mirror\footnote{Thorlabs DMLP567L} is used to combine the two beam paths. The focussing optics for each path are located before the dichroic. The objective lens for the second bea of the \gls{odt} is a $300\,\unit{mm}$ lens due to the extra distance imposed by the dichroic.
+The second beam axis is shared with the blue, nanosecond-pulse ionisation laser. A long-pass dichroic mirror\footnote{Thorlabs DMLP567L} is used to combine the two beam paths. The focussing optics for the ionisation and the \gls{odt} path are located before the dichroic. The objective lens for the second beam of the \gls{odt} is a $300\,\unit{mm}$ lens due to the extra distance imposed by the dichroic.
 
+As mentioned in \ref{odt_polarisation} the polarisation of the second beam must be orthogonal to that of the first to avoid standing waves and this is achieved with a half-waveplate as indicated in figure \ref{fig:dipole_rig}.
+
+After the second trapping beam has left the vacuum system it is incident on a power meter. The power meter operates with a reflective attenuator and the reflected beam is incident on a photodiode that is used for timing measurements. The final reflection off of the photodiode is safely disposed of with a beam stop.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/DipoleTrapRig.pdf}
 \caption{{\color{red} Caption please}}
+\label{fig:dipole_rig}
 \end{figure}
+
+\subsubsection{Alignment}
+
+The alignment of the crossed \gls{odt} is done but first tuning the seed \gls{ecdl} close to resonance such that when the laser is scanning the saturated absorption signal is visible on the \gls{cro}. With the detuning this low the scattering rate becomes very large and portions of the \gls{mot} are visibly blown away by the \gls{odt} beams when viewed by the \gls{ccd} cameras that monitor flourescence. An example of this is shown in figure \ref{fig:mot_slice}. The level of effect the \gls{odt} beams have on the trapped atoms can be varied by altering the current in the \gls{ta} and the detuning of the \gls{ecdl}. This process allows the two beams to be overlapped in the region of the \gls{mot}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{figs/mot_slice.pdf}
+\caption{The first beam of the ODT dividing the MOT into two halves.}
+\label{fig:mot_slice}
+\end{figure}
+
+{\color{red} find the original mention of sat abs and give a good reference}
 
 \section{Absorption Imaging}
 
