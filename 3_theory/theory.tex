@@ -277,7 +277,7 @@ Single beam traps have strong confinement in the direction perpendicular to beam
 \begin{subfigure}[b]{0.5\textwidth}
 \centering
 \begin{tikzpicture}
-    \begin{scope}
+    \begin{scope}[scale=0.5]
         \shade[shading=radial, inner color=red, outer color=white] (-3,-1.581) -- (-3,1.581) -- plot[domain=-3:3] (\x, {0.3*sqrt(1+\x*\x)}) -- (3,1.581) -- (3,-1.581) -- plot[domain=3:-3] (\x, {-0.3*sqrt(1+\x*\x)}) -- cycle;
         \shade[ball color=brown] (0.0, 0.0) circle (0.05);
         \shade[ball color=brown] (0.025, 0.05) circle (0.05);
@@ -293,12 +293,12 @@ Single beam traps have strong confinement in the direction perpendicular to beam
         \shade[ball color=brown] (0.00, 0.125) circle (0.05);
     \end{scope}
 \end{tikzpicture}
-\vspace{40pt}
+\vspace{20pt}
 \caption{A single beam optical dipole trap.}
 \end{subfigure}\begin{subfigure}[b]{0.5\textwidth}
 \centering
 \begin{tikzpicture}
-    \begin{scope}
+    \begin{scope}[scale=0.5]
         \shade[shading=radial, inner color=red, outer color=white] (-3,-1.581) -- (-3,1.581) -- plot[domain=-3:3] (\x, {0.15*sqrt(1+\x*\x)}) -- (3,1.581) -- (3,-1.581) -- plot[domain=3:-3] (\x, {-0.15*sqrt(1+\x*\x)}) -- cycle;
        \shade[shading=radial, inner color=red, outer color=white] (-1.581,-3) -- (1.581,-3) -- plot[domain=-3:3] ({0.15*sqrt(1+\x*\x)}, \x) -- (1.581,3) -- (-1.581,3) -- plot[domain=3:-3] ({-0.15*sqrt(1+\x*\x)}, \x) -- cycle;
         \shade[ball color=brown] (0.0, 0.0) circle (0.05);
@@ -317,11 +317,16 @@ Single beam traps have strong confinement in the direction perpendicular to beam
 \end{tikzpicture}
 \caption{A crossed beam optical dipole trap.}
 \end{subfigure}
+\caption{Example configurations of optical dipole traps.}
 \end{figure}
 
 \subsection{Simulation}
 
 {\color{red}Need to include some more graphs showing how the trap parameters were selected.}
+
+\subsection{Gaussian Beam Optics}
+
+Gaussian beam incident on lens, waist size etc.
 
 \section{Imaging}
 
