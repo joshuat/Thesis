@@ -26,7 +26,7 @@ The Zeeman slower cools the atoms atoms from having a velocity of order 300m/s t
 
 An Eagleyards tapered amplifier seeded with light from two \glspl{ecdl} is used for the doppler cooling. The first \gls{ecdl} produces the cooling light and the second is used to repump any atoms that fall into a dark state.
 
-The \gls{ecdl} is locked on to the appropriate frequency using a saturated absorption configuration\cite{maguire_theoretical_2006}.
+The \gls{ecdl} is locked on to the appropriate frequency using a saturated absorption configuration\cite{maguire_theoretical_2006,haroche_theory_1972, preston_doppler-free_1996}.
 
 \subsection{Quasi-Mirror Magneto-Optic Trap}
 \glspl{mot} have been used extensively in atom-optics laboratories to trap and cool atoms of many species. The physics of \glspl{mot} is well documented and understood\cite{metcalf_laser_1999}.
@@ -52,10 +52,10 @@ The generation of electrons is a central part of the \gls{caes} and each of the 
 
 The excitation of the atoms in the cloud can be done in one of two ways in the \gls{caes}. The first method of excitation is a $50\,\unit{\mu s}$ exposure of light from an \gls{ecdl} and the second method is to use a pulse from a Newport 3960 fs Tsunami which is able to produce $35\,\unit{fs}$ long bunches.
 
-\subsubsection{ECDL Excitation}
+\subsubsection{Continuous Excitation}
 
-The \gls{ecdl} is locked onto the $5 ^2 S_{3/2} F=3\rightarrow5 ^2 P_{3/2} F=4$ transition of rubidium using saturated absorption and the exposure is controlled with an \gls{aom}. The excitation \gls{ecdl} beam shares much of its beam path with that of the femtosecond laser and a mirror on a flip mount is used to determine which used for excitation at a given time.
-.
+The \gls{ecdl} is locked onto the $5 ^2 S_{3/2} F=3\rightarrow5 ^2 P_{3/2} F=4$ transition of rubidium using saturated absorption and the exposure is controlled with an \gls{aom}. The excitation \gls{ecdl} beam shares much of its beam path with that of the femtosecond laser and a mirror on a flip mount is used to determine which used for excitation at a given time.The exposure of the atoms to the excitation beam is controlled with an \gls{aom} and is approximately $80\,\unit{\mu s}$ long.
+
 \subsubsection{Femtosecond Excitation}
 
 The Newport 3960 fs Tsunami produces approximately $80\,\unit{fs}$ long pulses of light with a wavelength centered around $800\,\unit{nm}$ with a $20\,\unit{nm}$ linewidth.\cite{mcculloch_towards_2012} Femtosecond excitation allows the \gls{caes} to produce electron bunchs that are picoseconds long.
@@ -88,21 +88,21 @@ The design of the \gls{odt} began in 2011 and the first trapping was observed in
 {\color{red} more stuff}
 
 \subsection{Tapered Amplifier}
-The \gls{ta} serves as the light source for the \gls{odt} and is built from an Eagleyards $780\,\unit{nm}$ $w\,\unit{W}$ CR-Mounted \gls{ta} seeded by a homebuilt \gls{ecdl}. Due to a change in the mounting of the \gls{ta} chip it was necessary to redesign part of David Sheludko's \gls{mopa} design\cite{sheludko_shaped_2010}. A number of other changes to the original \gls{mopa} design were also made to allow more flexibility during alignment.
+The \gls{ta} serves as the light source for the \gls{odt} and is built from an Eagleyard Photonics $780\,\unit{nm}$ $2\,\unit{W}$ CR-Mounted \gls{ta} seeded by a homebuilt \gls{ecdl}. This method of seeding \glspl{ta} is known as a \gls{mopa}\cite{wilson_narrow-linewidth_1998}. Due to a change in the mounting of the \gls{ta} chip it was necessary to redesign part of David Sheludko's \gls{mopa} design\cite{sheludko_shaped_2010}. A number of other changes to the original \gls{mopa} design were also made to allow more flexibility during alignment. It was also necessary to build a new \gls{mopa} from the new and existing parts.
 
 {\color{red} more details? pictures?}
 
-The \gls{ecdl} provides approximately $25\,\unit{mW}$ of injection seed with a linewidth typically below $300\,\unit{kHz}$. The seed laser is focussed onto the input facet of the \gls{ta} with a high \gls{na} lens\footnote{Thorlabs C230TM-B f=$4.5\,\unit{mm}$ $0.55\,\unit{NA}$}. The beam from the output facet of the \gls{ta} is collimated with two lens due to the high astygmatism in the output beam. The first lens is a high \gls{na} aspheric lens\footnote{Thorlabs C330TM-B f=$3.1\,\unit{mm}$ $0.68\,\unit{NA}$} and the second is a cylindrical lens\footnote{Unknown provenance f=$50\,\unit{mm}$} to counter the horizontal divergence. The outgoing beam then passes through a double stage optical isolator to prevent optical feedback causing damage to the \gls{ta}. The maximum output power of the \gls{ta}, after the isolator, is approximately $1.75\,\unit{W}$.
+The \gls{ecdl} provides approximately $25\,\unit{mW}$ of injection seed with a linewidth typically below $300\,\unit{kHz}$. The seed laser is focussed onto the input facet of the \gls{ta} with a high \gls{na} lens\footnote{Thorlabs C230TM-B f=$4.5\,\unit{mm}$ $0.55\,\unit{NA}$}. The beam from the output facet of the \gls{ta} is collimated with two lens due to the high astigmatism in the output beam. The first lens is a high \gls{na} aspheric lens\footnote{Thorlabs C330TM-B f=$3.1\,\unit{mm}$ $0.68\,\unit{NA}$} and the second is a cylindrical lens\footnote{Unknown provenance f=$50\,\unit{mm}$} to counter the horizontal divergence. The outgoing beam then passes through a double stage optical isolator to prevent optical feedback causing damage to the \gls{ta}. The maximum output power of the \gls{ta}, after the isolator, is approximately $1.75\,\unit{W}$.
 
-A small portion of the seed beam is siphoned into a saturated absorption setup to allow locking of the seed beam to the resonances of rubidium. This is not particularly useful during normal operation since the laser is usually detuned well beyond the resonances. When the \gls{ta} is running optical feedback interferes with the \gls{ecdl} causing further issues with visually deciphering, let alone locking to, the saturated absorption signal.
+A small portion of the seed beam is siphoned into a saturated absorption setup\cite{maguire_theoretical_2006, haroche_theory_1972, preston_doppler-free_1996} to allow locking of the seed beam to the resonances of rubidium. This is not particularly useful during normal operation since the laser is usually detuned well beyond the resonances however it is useful during alignment as discussed below. When the \gls{ta} is running optical feedback interferes with the \gls{ecdl} causing further issues with visually deciphering, let alone locking to, the saturated absorption signal.
 
-The output beam is coupled into a polarisation maintaining, single-mode fibre with the output end at the main experiment. At maximum power the power of the beam out of the fibre is apprimately 40\% of the input power. Most of the power loss is due to the non-Gaussian profile of the \gls{ta} beam. While 60\% of the power is lost the major advantage of fibre coupling the beam is that the output beam is almost perfectly Gaussian in profile which is a necessity for \glspl{odt}.
+The output beam is coupled into a polarisation maintaining, single-mode fibre with the output end at the main experiment. At maximum power the power of the beam out of the fibre is approximately 40\% of the input power. Most of the power loss is due to the non-Gaussian profile of the \gls{ta} beam. While 60\% of the power is lost the major advantage of fibre coupling the beam is that the output beam is almost perfectly Gaussian in profile which is a necessity for \glspl{odt}.
 
-A fraction of a percent of the light reflecting off the final mirror before the fibre mount transmits throught the mirror. This light is incident on a wavemeter and is used to monitor the wavelength of the output beam as well as check that the light is of a single wavelength. Occasionally the seed laser will operate in two modes simultaneously and the \gls{ta} amplifies both modes which makes the trapping less predictable.
+A fraction of a percent of the light reflecting off the final mirror before the fibre mount transmits through the mirror. This light is incident on a wavemeter and is used to monitor the wavelength of the output beam as well as check that the light is of a single wavelength. Occasionally the seed laser will operate in two modes simultaneously and the \gls{ta} amplifies both modes which makes the trapping less predictable.
 
 An old hard disc drive was used to create a shutter\cite{scholten_enhanced_2007} that is connected to the computer that runs the experiment. The shutter has a response time of $6\,\unit{ms}$ which must be taken into account when scheduling the timing of the experiment.
 
-{\color{red} details of power supplies, tec, etc?}.
+The \gls{ta}'s performance is sensitive to temperature so it is maintained at a constant temperature with water cooling and a \gls{tec} controlled by a Thorlabs temperature controller\footnote{Thorlabs TED200 C}. The \gls{ecdl} is controlled and powered by a Moglabs Diode Laser Controller and the \gls{ta} is powered by a ThorLabs laser diode controller\footnote{Thorlabs LDC 240 C}.
 
 \begin{figure}[h]
 \centering
@@ -111,18 +111,19 @@ An old hard disc drive was used to create a shutter\cite{scholten_enhanced_2007}
 \end{figure}
 
 \subsection{Fiber laser}
-{\color{red}How much detail should I go into here? I'm contemplating zero detail.}
+
+A Keopsys $20\,\unit{W}$ \gls{cw} fibre laser could also be used as a light source for \gls{odt}. Using this light source would significantly reduce the scattering rate and thus provide longer trap lifetimes. The potential depth of the trap would be reduced and this would result in a smaller effective trapping volume.
+
+Another issue with the $20\,\unit{W}$ fibre laser is safety. $780\,\unit{nm}$ light is visible unlike $1064\,\unit{nm}$ light which is well into the infrared spectrum. This combined with the huge power of this \gls{cw} laser would mean that great care must be taken with the design and operation of beam lines. The laser would also be capable of damaging some optical components.
 
 
 \subsection{Optical Dipole Trap}
 
 \Gls{odt} consist of focussed Gaussian laser beams. The output of the \gls{ta} fibre provides a Gaussian beam and the focussing optics described in this section produce the focussed beam.
 
-The output end of the \gls{ta} fibre is mounted in to a cage to allow precise alignment of lens for focussing (the `objective' lens) and beam expansion and shrinking. While the potential for shinking and expanding the beam incident on the objective lens is available it was not used in the final configuration.
+The output end of the \gls{ta} fibre is mounted in a cage to allow precise alignment of lens for focussing (the `objective' lens) and beam expansion and shrinking. While the potential for shrinking and expanding the beam incident on the objective lens is available it was not used in the final configuration.
 
 There is a limited amount of optical access to the \gls{mot} available and the \gls{odt} used two almost orthogonal beam paths the second of which is shared with the $480\,\unit{nm}$ ionisation laser. Both of the paths are approximately $60^{\circ}$ from horizontal. All the windows to the vacuum system are \gls{ar} coated for $780\,\unit{nm}$ light.
-
-{\color{red} picture of beam paths with correct angles?}
 
 The distance from one window to the opposite is $412.3\,\unit{mm}$ and the \gls{mot} should be situated halfway between them. The objective lens\footnote{Thorlabs AC508-250-B-ML f=$250\,\unit{mm}$} have a focal length of $250\,\unit{mm}$ which gives sufficient space to allow for adjustments of the beam waists. After the window of the first beam is another $250\,\unit{mm}$ lens to re-collimate the beam. This collimated beam is then propagated through free space to the second beam axis.
 
@@ -135,13 +136,13 @@ After the second trapping beam has left the vacuum system it is incident on a po
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/DipoleTrapRig.pdf}
-\caption{{\color{red} Caption please}}
+\caption{The ODT beam path originates with the output of the TA fibre. The beam is then focussed by an objective lens and passed through the vacuum system with the beam waist at the MOT. As the beam leaves the vacuum system it is recollimated and recycled for the second beam of the ODT. The polarisation is rotated with a half-waveplate and the beam is again focussed at the MOT. The beam also passes through a dichroic mirror so that the optical access can be shared with the blue ionisation beam. A power meter and photodiode are located at the end of the beam path to allow for diagnostics and the beam is terminated with a beam stop.}
 \label{fig:dipole_rig}
 \end{figure}
 
 \subsubsection{Alignment}
 
-The alignment of the crossed \gls{odt} is done but first tuning the seed \gls{ecdl} close to resonance such that when the laser is scanning the saturated absorption signal is visible on the \gls{cro}. With the detuning this low the scattering rate becomes very large and portions of the \gls{mot} are visibly blown away by the \gls{odt} beams when viewed by the \gls{ccd} cameras that monitor flourescence. An example of this is shown in figure \ref{fig:mot_slice}. The level of effect the \gls{odt} beams have on the trapped atoms can be varied by altering the current in the \gls{ta} and the detuning of the \gls{ecdl}. This process allows the two beams to be overlapped in the region of the \gls{mot}.
+The alignment of the crossed \gls{odt} is done but first tuning the seed \gls{ecdl} close to resonance such that when the laser is scanning the saturated absorption signal is visible on the \gls{cro}. With the detuning this low the scattering rate becomes very large and portions of the \gls{mot} are visibly blown away by the \gls{odt} beams when viewed by the \gls{ccd} cameras that monitor fluorescence. An example of this is shown in figure \ref{fig:mot_slice}. The level of effect the \gls{odt} beams have on the trapped atoms can be varied by altering the current in the \gls{ta} and the detuning of the \gls{ecdl}. This process allows the two beams to be overlapped in the region of the \gls{mot}.
 
 \begin{figure}[h]
 \centering
@@ -150,11 +151,32 @@ The alignment of the crossed \gls{odt} is done but first tuning the seed \gls{ec
 \label{fig:mot_slice}
 \end{figure}
 
-{\color{red} find the original mention of sat abs and give a good reference}
-
 \section{Absorption Imaging}
 
+In order to detect trapping within the \gls{odt} it is necessary to have a way of imaging it. Fluorescence imaging is not sufficient due to the fact that the detuned beams of the \gls{odt} do not induce visible amounts of fluorescence. Absorption imaging however is able to image the \gls{odt}.
+
+The light source for imaging is shared with the continuous excitation beam and is an \gls{ecdl} locked with saturated absorption and controlled by a Mogbox\footnote{Moglabs Diode Laser Controller}. The power available for imaging can vary from a few microWatts to $2.5\,\unit{mW}$ depending on the position of the half wave plate located before the \gls{pbs} that splits the beam between the imaging and excitation beam lines. The imaging beam is then coupled into a fibre and brought over to the main experiment.
+
+The imaging beam shares optical access with the vertical \gls{mot} beam. By putting the imaging beam slightly off axis compared to the \gls{mot} beam it is possible to insert and extract the beam without impact on the trapping beam.
+
+A camera lens\footnote{Nikon AF Micro-Nikkor $200\,\unit{mm}$} is used to focus the beam onto a \gls{ccd} camera\footnote{Allied Vision Technologies Stingray F-080B}. The effective size of the camera's pixels was calibrated by first getting the camera to focus on a fluorescing \gls{mot}. Then a mirror was placed in the beam line near the camera and a normal ruler was placed so that it was visible on the camera and in-focus. In this situation the ruler is in a position equivalent to the \gls{mot} so by measuring the size of a pixel with the ruler we can later measure the size of features in the \gls{mot} plane. In this imaging beamline the effective pixel size was calculated to be $12.8\pm0.4\,\unit{\mu m}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/ImagingRig.pdf}
+\caption{The imaging beam's optical access is shared with the vertical MOT beam. The beam is collimated from a fibre and is slightly off axis from the MOT beam. It is recorded by a Stingray CCD camera after being focussed by a Nikon camera lens.}
+\label{fig:imaging_rig}
+\end{figure}
 
 
-\section{LabView}
-text
+\section{Software}
+
+In order to perform absorption imaging new software was required to communicate with the AVT camera and to do the image analysis. This new software was created in Labview and Python.
+
+The software for image acquisition, integration and absorption imaging was created in Labview and is able to acquire images from the camera and apply the theory described in section \ref{sec:absorption_imaging} in order to immediately present the user with the absorption images (such as the one in figure \ref{fig:absorption_example}). The Labview software is also able to present the atom count for a given absorption image.
+
+More in-depth analysis, such as temperature measurements, is performed using Python programs described in more detail in chapter 4.
+
+\section{Experimental Procedure}
+
+actually running stuff
