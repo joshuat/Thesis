@@ -26,7 +26,7 @@ The Zeeman slower cools the atoms atoms from having a velocity of order 300m/s t
 
 An Eagleyards tapered amplifier seeded with light from two \glspl{ecdl} is used for the doppler cooling. The first \gls{ecdl} produces the cooling light and the second is used to repump any atoms that fall into a dark state.
 
-The \gls{ecdl} is locked on to the appropriate frequency using a saturated absorption configuration\cite{maguire_theoretical_2006,haroche_theory_1972, preston_doppler-free_1996}.
+The \gls{ecdl} is locked to the appropriate frequency using a saturated absorption configuration\cite{maguire_theoretical_2006,haroche_theory_1972, preston_doppler-free_1996}.
 
 \subsection{Quasi-Mirror Magneto-Optic Trap}
 \glspl{mot} have been used extensively in atom-optics laboratories to trap and cool atoms of many species. The physics of \glspl{mot} is well documented and understood\cite{metcalf_laser_1999}.
@@ -36,10 +36,10 @@ A conventional \gls{mot} consists of six beams which are able to damp the veloci
 In the \gls{caes} the accelerating structure required to extract the electron bunches is integrated with the mirror-MOT, ``Quasi-Mirror Magneto-Optical Trap'' (QMMOT)\cite{hanssen_using_2006}. Figure \ref{fig:qmmot} shows a schematic of the QMMOT where one of the plates is transmissive and the other reflective and both can be charged to provide the accelerating electric field.
 
 \begin{figure}[h]
-\label{fig:qmmot}
 \centering
 \includegraphics[width=0.45\textwidth]{figs/qMMOT.jpg}
 \caption{{\color{red}Also taken from Andy's thesis.}Quasi-Mirror Magneto-Optical Trap. Two of the horizontal cooling beams are reflected from the conductive mirror and the other two pass through the conductive window to form the trapping region. To extract electrons a static electric field is applied once the cloud has been ionised.}
+\label{fig:qmmot}
 \end{figure}
 
 The laser power for the \gls{mot} is supplied by a Toptica \gls{ta} seeded by the cooling and repump \glspl{ecdl} which are locked onto the appropriate atomic transistions using saturated absorption setups. A pair of magnetic coils external to the vacuum system in an anti-Helpholtz configuration proved the magnetic fields for the \gls{mot}.
@@ -168,6 +168,7 @@ A camera lens\footnote{Nikon AF Micro-Nikkor $200\,\unit{mm}$} is used to focus 
 \label{fig:imaging_rig}
 \end{figure}
 
+The axis the imaging beam images is not ideal. Ideally the imaging beam axis would be orthogonal to both of the trapping beam which allows clear images to be made of both beams. Having the imaging axis orthogonal to gravity also allows the observation of atom clouds falling. Unfortunately it is not currently feasable to put the imaging beam on the horizontal axis, which would meet these criterion. This is due to the scarcity of optical access on that axis and the crowded nature inside the vacuum system. As the results in chapter 4 show it is still possible to differentiate between the two beams due to the off-axis alignment of the imaging beam.
 
 \section{Software}
 
@@ -179,4 +180,80 @@ More in-depth analysis, such as temperature measurements, is performed using Pyt
 
 \section{Experimental Procedure}
 
-actually running stuff
+During standard operation the \gls{caes} operates at a frequency of $10\,\unit{Hz}$. This cycle consists of:
+\begin{enumerate}
+\item Loading  the \gls{mot} for approximately $93\,\unit{ms}$.
+\item Turning off the magnetic and optical trapping.
+\item Turning on the excitation laser (\gls{cw}).
+\item $10\,\unit{ns}$ Ionisation pulse.
+\item Turning the accelerating electric field on for $60\,\unit{\mu s}$.
+\item Turning off the excitation laser and turning the magnet and optical trapping back on.
+\end{enumerate}
+
+When aligning, imaging and configuring the \gls{odt} the process changes. The ionisation and acceleration steps are not necessary and more steps are required for imaging. The state of each of the lasers and coils during this process is shown in figure \ref{fig:sequence}.
+
+The longest step is the loading of the \gls{mot} which require both the Zeeman and \gls{mot} cooling. The \gls{odt} beam is also on during this stage so that the \gls{odt} can load. This step lasts for approximately $300\,\unit{ms}$ so that the \gls{mot} has plenty of time to load. 
+
+In the next step atoms are held solely by the \gls{odt}. This step is of variable length depending on what is being examined. By imaging after a certain delay snapshops of the \gls{odt}'s evolution can be made.
+
+In the imaging step the imaging laser is turned on and camera is triggered. It is important to turn the \gls{mot} repump laser on so that atoms do not fall into the dark state. The \gls{odt} laser is strong enough and the detuning small enough that it can act as a repump and excitation laser itself. To avoid potential confusion and to ensure that more atoms are able to be imaged it is best to turn off the trapping beam during imaging.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.75, every node/.style={scale=0.7}]
+    \begin{scope}[thick, decoration={snake,amplitude=.4mm,
+        segment length=2mm,post length=1mm}]
+      \draw (0,10) node[left] {MOT Cooling};
+        \draw (0,10.3)  -- (3, 10.3) -- (3, 9.7) -- (8.5, 9.7) -- (8.5, 10.3) -- (11, 10.3);
+
+      \draw (0, 9) node[left] {MOT Repump};
+        \draw (0, 9.3) -- (3, 9.3) -- (3, 8.7) -- (6, 8.7) -- (6, 9.3) -- (8, 9.3) -- (8, 8.7) -- (8.5, 8.7) -- (8.5, 9.3) -- (11, 9.3);
+
+      \draw (0, 8) node[left] {MOT B-Field};
+        \draw (0, 8.3) -- (3, 8.3) -- (3, 7.7)-- (8.5, 7.7) -- (8.5, 8.3) -- (11, 8.3);
+
+      \draw (0, 7) node[left] {Zeeman Cooling};
+        \draw (0, 7.3) -- (3, 7.3) -- (3, 6.7) -- (8.5, 6.7) -- (8.5, 7.3) -- (11, 7.3);
+
+      \draw (0, 6) node[left] {Zeeman Repump};
+        \draw (0, 6.3) -- (3, 6.3) -- (3, 5.7) -- (8.5, 5.7) -- (8.5, 6.3) -- (11, 6.3);
+
+      \draw (0, 5) node[left] {Zeeman B-Field};
+        \draw (0, 5.3) -- (3, 5.3) -- (3, 4.7) -- (8.5, 4.7) -- (8.5, 5.3) -- (11, 5.3);
+
+      \draw (0, 4) node[left] {Zeeman Repump};
+        \draw (0, 4.3) -- (3, 4.3) -- (3, 3.7) -- (8.5, 3.7) -- (8.5, 4.3) -- (11, 4.3);
+
+      \draw (0, 3) node[left] {ODT};
+        \draw (0, 3.3) -- (6, 3.3) -- (6, 2.7) -- (8.5, 2.7) -- (8.5, 3.3) -- (11, 3.3);
+
+      \draw (0, 2) node[left] {Imaging Beam};
+        \draw (0, 1.7) -- (6, 1.7) -- (6, 2.3) -- (8, 2.3) -- (8, 1.7) -- (11, 1.7);
+
+      \draw (0, 1) node[left] {Camera Trigger};
+        \draw (0, 0.7) -- (6, 0.7) -- (6, 1.3) -- (6.5, 1.3) -- (6.5, 0.7) -- (11, 0.7);
+
+    \draw[dotted] (3, 10.3) -- (3, -1);
+    \draw (1.5, -0.5) node {Loading MOT};
+    \draw (1.5, -0.9) node {$\sim300\,\unit{ms}$};
+
+    \draw[dotted] (6, 10.3) -- (6, -1);
+    \draw (4.5, -0.5) node {ODT};
+    \draw (4.5, -0.9) node {$x\,\unit{ms}$};
+
+    \draw[dotted] (8, 10.3) -- (8, -1);
+    \draw (7, -0.5) node {Imaging};
+    \draw (7, -0.9) node {$\sim250\,\unit{\mu s}$};
+
+
+    \draw[dotted] (8.5, 10.3) -- (8.5, -1);
+    \draw (9.8, -0.5) node {Loading MOT};
+    \end{scope}
+\end{tikzpicture}
+\caption{{\color{red}another caption}}
+\label{fig:sequence}
+\end{figure}
+
+Another important consideration is the delay between a change in a control signal and response from a device (such as a laser, magnetic coil or camera). Lasers that are controlled with \glspl{aom} have a very fast repsonse time {\color{red} how fast? citation?}. The response time of the AVT camera has not been measured however it is significantly less than the usual exposure times of the camera (typically $30-100\,\unit{\mu s}$). The response times of the mechanical shutters used on the Zeeman slower and \gls{odt} however are significant.
+
+The response times of the shutters can easily be measured by using a photodiode to compare the amount of light transmitting through the shutters with the signal controlling the shutter. {\color{red} should I meantion that this isn't my work? it was done by Paul and Rory} This method has shown that the response time of the Zeeman slower's shutter is $4.6\,\unit{ms}$ and the \gls{odt}'s shutter is $6.2\,\unit{ms}$. It is important to take these values into account when scheduling the timing of the experiment.
