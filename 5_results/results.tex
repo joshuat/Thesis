@@ -1,8 +1,7 @@
 \chapter{Results}
 
-{\color{red}If I ever get any results go in here.}
-
 \section{Magneto-Optic Trap Analysis}
+Analysis of the \gls{mot} allows us to optimise the \gls{mot} characteristics and tune those of the \gls{odt} to have the best performance. The temperature and number of trapped atoms are some of the most useful metrics to know.
 
 \subsection{Temperature}
 Knowing the temperature of the \gls{mot} allows optimisation of the parameters of the \gls{odt} and can be useful for optimising the \gls{mot} itself.
@@ -31,16 +30,16 @@ The theory involved in this calculation is discussed in section \ref{atom_count}
 
 Another python program was used to perform this calculation on the same data that was used for the temperature measurements. As expected the number of atoms in each of the images remains constant until the edges of the cloud reach the limits of the \gls{ccd} as you can see in figure \ref{fig:mot_atom_count}. The number of atoms in the \gls{mot} is therefore $1.3 \pm0.19\times10^8$ which is comparable to measurements made previously with the \gls{caes}\cite{sheludko_shaped_2010}.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
     \begin{subfigure}[b]{0.3\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figs/MOTimage1.png}
-    \includegraphics[width=\textwidth]{figs/MOTimage2.png}
+    \includegraphics[width=0.8\textwidth]{figs/MOTimage1.png}
+    \includegraphics[width=0.8\textwidth]{figs/MOTimage2.png}
     \caption{The MOT $1\,\unit{ms}$ (top) and $9\,\unit{ms}$ (bottom) after release.}
     \end{subfigure}~~~\begin{subfigure}[b]{0.6\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figs/MOT_atom_count.pdf}
+    \includegraphics[width=0.8\textwidth]{figs/MOT_atom_count.pdf}
     \caption{The evolution of the number of atoms imaged by the camera after release.}
     \label{fig:mot_atom_count}
     \end{subfigure}
@@ -52,43 +51,45 @@ The first optical dipole trapping was observed in September 2012 and the first c
 
 An interesting effect can be observed in the crossed \gls{odt} images. Atoms within the \gls{odt} region can be seen being pushed down the beam by the scattering force of the trapping laser while leaving the core of the \gls{odt} behind. This is shown in figure \ref{fig:crossed_effect}. This effect implies that the \gls{odt} is not deep enough to trap all of the atoms within the trapping region. This can be fixed by either increasing the depth of the \gls{odt} or reducing the temperature of the \gls{mot}.
 
-\begin{figure}
+The same set of data was used for all of the analysis performed in this section. In this data set the \gls{odt} laser was tuned to $\lambda=780.317\,\unit{nm}$ and it had only $358\,\unit{mW}$ of power. The \gls{mot} trapping was turned off for a range of times before imaging occured.
+
+\begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=1.1\textwidth]{figs/ODTimage1.pdf}
+        \includegraphics[width=1\textwidth]{figs/ODTimage1.pdf}
     \end{subfigure}\begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=1.1\textwidth]{figs/ODTimage2.pdf}
+        \includegraphics[width=1\textwidth]{figs/ODTimage2.pdf}
     \end{subfigure}\begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=1.1\textwidth]{figs/ODTimage3.pdf}
+        \includegraphics[width=1\textwidth]{figs/ODTimage3.pdf}
     \end{subfigure}
 \caption{A crossed ODT and untrapped atoms in the region of the ODT being pushed down the trapping beams. The images are taken 2, 4 and $6\,\unit{ms}$ after the MOT trapping has be turned off.}
 \label{fig:crossed_effect}
 \end{figure}
 
 \subsection{Size}
-The size of the crossed \gls{odt} can be calulated by fitting Gaussian curves to the distribution as shown in figure \ref{fig:ODTimage1} and taking the 1/e radius from the fit. Here the 1/e length of the trap was found to be $1292.6\,\unit{\mu m}$ and the width to be $417.4\,\unit{\mu m}$. The \gls{odt} laser was tuned to $\lambda=780.317\,\unit{nm}$ and the \gls{mot} was turned off $2\,\unit{ms}$ before imaging.
+The size of the crossed \gls{odt} can be calulated by fitting Gaussian curves to the distribution as shown in figure \ref{fig:ODTimage1} and taking the 1/e radius from the fit. Here the 1/e length of the trap was found to be $1292.6\,\unit{\mu m}$ and the width to be $417.4\,\unit{\mu m}$. The \gls{mot} trapping was turned off for $2\,\unit{ms}$ before imaging for this image.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
     % row 1
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figs/ODTimage1.png}
+        \includegraphics[width=0.6\textwidth]{figs/ODTimage1.png}
         \caption{The crossed ODT.}
     \end{subfigure}\begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figs/ODTimage1x.png}
+        \includegraphics[width=0.6\textwidth]{figs/ODTimage1x.png}
         \caption{Vertical cross-section though the centre of the ODT.}
     \end{subfigure}
 
     % row 2
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=0.9\textwidth]{figs/ODTimage1zoom.png}
+        \includegraphics[width=0.7\textwidth]{figs/ODTimage1zoom.png}
         \caption{The crossed ODT in detail.}
     \end{subfigure}\begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figs/ODTimage1y.png}
+        \includegraphics[width=0.6\textwidth]{figs/ODTimage1y.png}
         \caption{Horizontal cross-section through the centre of the ODT.}
     \end{subfigure}
 
