@@ -171,7 +171,7 @@ After the second trapping beam has left the vacuum system it is incident on a po
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{figs/DipoleTrapRig.pdf}
+\includegraphics[width=0.4\textwidth]{figs/DipoleTrapRig.pdf}
 \caption{The ODT beam path originates with the output of the TA fibre. The beam is then focussed by an objective lens and passed through the vacuum system with the beam waist at the MOT. As the beam leaves the vacuum system it is recollimated and recycled for the second beam of the ODT. The polarisation is rotated with a half-waveplate and the beam is again focussed at the MOT. The beam also passes through a dichroic mirror so that the optical access can be shared with the blue ionisation beam. A power meter and photodiode are located at the end of the beam path to allow for diagnostics and the beam is terminated with a beam stop.}
 \label{fig:dipole_rig}
 \end{figure}
@@ -180,7 +180,7 @@ After the second trapping beam has left the vacuum system it is incident on a po
 
 The alignment of the crossed \gls{odt} is done but first tuning the seed \gls{ecdl} close to resonance such that when the laser is scanning the saturated absorption signal is visible on the \gls{cro}. With the detuning this low the scattering rate becomes very large and portions of the \gls{mot} are visibly blown away by the \gls{odt} beams when viewed by the \gls{ccd} cameras that monitor fluorescence. An example of this is shown in figure \ref{fig:mot_slice}. The level of effect the \gls{odt} beams have on the trapped atoms can be varied by altering the current in the \gls{ta} and the detuning of the \gls{ecdl}. This process allows the two beams to be overlapped in the region of the \gls{mot}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.3\textwidth]{figs/mot_slice.pdf}
 \caption{The first beam of the ODT dividing the MOT into two halves.}
@@ -197,7 +197,7 @@ The imaging beam shares optical access with the vertical \gls{mot} beam. By putt
 
 A camera lens\footnote{Nikon AF Micro-Nikkor $200\,\unit{mm}$} is used to focus the beam onto a \gls{ccd} camera\footnote{Allied Vision Technologies Stingray F-080B}. The effective size of the camera's pixels was calibrated by first getting the camera to focus on a fluorescing \gls{mot}. Then a mirror was placed in the beam line near the camera and a normal ruler was placed so that it was visible on the camera and in-focus. In this situation the ruler is in a position equivalent to the \gls{mot} so by measuring the size of a pixel with the ruler we can later measure the size of features in the \gls{mot} plane. In this imaging beamline the effective pixel size was calculated to be $12.8\pm0.4\,\unit{\mu m}$.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/ImagingRig.pdf}
 \caption{The imaging beam's optical access is shared with the vertical MOT beam. The beam is collimated from a fibre and is slightly off axis from the MOT beam. It is recorded by a Stingray CCD camera after being focussed by a Nikon camera lens.}
@@ -205,6 +205,8 @@ A camera lens\footnote{Nikon AF Micro-Nikkor $200\,\unit{mm}$} is used to focus 
 \end{figure}
 
 The axis the imaging beam images is not ideal. Ideally the imaging beam axis would be orthogonal to both of the trapping beam which allows clear images to be made of both beams. Having the imaging axis orthogonal to gravity also allows the observation of atom clouds falling. Unfortunately it is not currently feasable to put the imaging beam on the horizontal axis, which would meet these criterion. This is due to the scarcity of optical access on that axis and the crowded nature inside the vacuum system. As the results in chapter 4 show it is still possible to differentiate between the two beams due to the off-axis alignment of the imaging beam.
+
+{\color{red} mention backgrounds}
 
 \section{Software}
 
@@ -234,7 +236,7 @@ In the next step atoms are held solely by the \gls{odt}. This step is of variabl
 
 In the imaging step the imaging laser is turned on and camera is triggered. It is important to turn the \gls{mot} repump laser on so that atoms do not fall into the dark state. The \gls{odt} laser is strong enough and the detuning small enough that it can act as a repump and excitation laser itself. To avoid potential confusion and to ensure that more atoms are able to be imaged it is best to turn off the trapping beam during imaging.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.75, every node/.style={scale=0.7}]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
