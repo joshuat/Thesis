@@ -4,11 +4,11 @@ This chapter describe the theory involved in designing and imaging an \gls{odt}.
 
 \section{Energy Levels of Rubidium}
 
-The \gls{mot} makes use of a closed transition of rubidium in order to create the atomic cloud. The \gls{odt} and absorption imaging also interact with this transition. The various energy levels and transitions are shown in figure \ref{fig:energy_levels}.
+\Gls{mot} make use of a closed transition of rubidium in order to trap atoms into an atomic cloud. \Glspl{odt} and absorption imaging also interact with this transition. The various energy levels and transitions involved are shown in figure \ref{fig:energy_levels}.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\hspace{10pt}
+%\hspace{10pt}
 \begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
         segment length=2mm,post length=1mm}]
@@ -41,21 +41,20 @@ The \gls{mot} makes use of a closed transition of rubidium in order to create th
         \draw[decorate,red,->] (3.5,-0.1) -- (3.5, 2.6);
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{The energy levels involved in trapping rubidium in a MOT. The first two transitions show the cycling transition that is used by the main cooling lasers in a MOT. The third and forth red lines show two forbidden transitions. If the cooling laser excites to the F=3 level then it is possible for the atom to decay to the `dark' F=2 state. The repump laser serves to restore these atoms to the cycle. The dotted line indicated the detuning required for Doppler cooling.}
+\caption[Title]{The energy levels involved in trapping rubidium in a MOT. The first two transitions show the cycling transition that is used by the main cooling lasers in a MOT. The third and forth red lines show two forbidden transitions. If the cooling laser excites to the F=3 level then it is possible for the atom to decay to the `dark' F=2 state. The repump laser serves to restore these atoms to the cycle. The dotted line indicates the detuning required for Doppler cooling.}
 \label{fig:energy_levels}
 \end{figure}
 
-The $5 ^2 S_{3/2} F=3\rightarrow5 ^2 P_{3/2} F=4$ transition in rubidium forms a closed loop. Atoms are excited to the F=4 state and then spontaneously decay back to the F=3 state. The atom is forbidden to decay into any of the $5 ^2 P_{1/2}$ states since such a transition would not conserve parity. The excited atoms are also forbidden to decay to the $5 ^2 S_{3/2} F=2$ state since this would require an angular momentum change of 2 which a single photon cannot supply
+The $5 ^2 S_{3/2}\;F=3\rightarrow5 ^2 P_{3/2}\;F=4$ transition in rubidium forms a closed loop. Atoms are excited to the F=4 state and then spontaneously decay back to the F=3 state. The atom is forbidden to decay into any of the $5 ^2 P_{1/2}$ states since such a transition would not conserve parity. The excited atoms are also forbidden to decay to the $5 ^2 S_{3/2}\;F=2$ state since this would require an angular momentum change of 2 which a single photon cannot supply
 
-There is a small chance that an atom absorbing a photon will be excited to the F=3 state after which the atom can decay to either the F=3 ground state or the F=2 `dark' state. If the atoms enters the `dark' state then it no longer interacts with the cooling beams and thus remains in the `dark' state and is no longer trapped. The repump laser is tuned to the $5 ^2 S_{3/2} F=2\rightarrow5 ^2 P_{3/2} F=3$ transition so that atoms can be reintroduced to the cycling transition and remain trapped.
+There is a small chance that an atom absorbing a photon will be excited to the F=3 state after which the atom can decay to either the F=3 ground state or the F=2 `dark' state. If the atoms enters the `dark' state then it no longer interacts with the cooling beams and thus remains in the `dark' state and is no longer trapped. The repump laser is tuned to the $5 ^2 S_{3/2}\;F=2\rightarrow5 ^2 P_{3/2}\;F=3$ transition so that atoms can be reintroduced to the cycling transition and remain trapped.
 
 \section{Electron Generation in the Cold-Atom Electron Source}
-The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides strong control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible as described by McCulluch et. al. \cite{mcculloch_arbitrarily_2011}.
+The \gls{caes} uses two stage photoionisation as its primary method of electron production. This method provides good control over the excess energy of the ionised electrons which is essential to the production of cold electrons. Control of the initial electron bunch shape is also possible by using a \gls{slm} as described by McCulluch et al.\cite{mcculloch_arbitrarily_2011}.
 
 Two lasers with different wavelengths can be used for efficient ionisation of atoms while producing cold electrons. An excitation laser takes the atoms from the ground state to an intermediary excited state and an ionisation laser takes the excited atoms from the intermediary state to the ionisation continuum. The excess energy of the ionised electrons can be controlled by varying the wavelength of the ionisation laser.
 
 \begin{figure}[h]
-
 \hspace{0.235\textwidth}
 \begin{tikzpicture}[scale=1.5]
     \begin{scope}[thick, decoration={snake,amplitude=.4mm,
@@ -81,11 +80,11 @@ Two lasers with different wavelengths can be used for efficient ionisation of at
       \draw (1, 2) node[left=0.25cm] {$\hbar\omega_2$};
     \end{scope}
 \end{tikzpicture}
-\caption[Title]{Energy level diagram for an atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$ to the excited state $\ket{e}$ is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to a Rydberg state. The atom is then field ionised by the uniform electric field.}
+\caption[Title]{Energy level diagram for an atom undergoing two-stage ionisation. Resonant excitation from the ground state, $\ket{g}$, to the excited state, $\ket{e}$, is achieved with a coupling laser of frequency $\omega_1$. A second laser of frequency $\omega_2$ is used to couple $\ket{e}$ to a Rydberg state or the ionisation continuum. The atom can then be field ionised from the Rydberg state by the uniform electric field.}
 \label{fig:energy_level}
 \end{figure}
 
-In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms (780.24nm). This resonance results in efficient population transfer to the excited state. The ionisation laser can be set to couple the first excited state to a Rydberg state rather than to the ionisation continuum directly which results in resonant transitions. The resonant transition to a Rydberg state followed by field ionisation induced by the accelerating electric field (see figure \ref{fig:field_ionisation}) is more efficient than other ionisation pathways which rely on non-resonant behaviour. Field ionisation results in free electrons with very little energy ($T\approx10K$\cite{mcculloch_arbitrarily_2011}) and are thus called `cold'.
+In the \gls{caes} the excitation laser is resonant to the D2 transition of the trapped $^{85}$Rb atoms ($780.24\,\unit{nm}$). This resonance results in efficient population transfer to the excited state. The ionisation laser can be set to couple the first excited state to a Rydberg state rather than to the ionisation continuum directly which results in resonant transitions. The resonant transition to a Rydberg state followed by field ionisation induced by the accelerating electric field (see figure \ref{fig:field_ionisation}) is more efficient than other ionisation pathways which rely on non-resonant behaviour. Field ionisation results in free electrons with very little energy ($T\approx10\,\unit{K}$\cite{mcculloch_arbitrarily_2011}) and are thus called `cold'.
 
 \begin{figure}[h]
 \centering
@@ -116,28 +115,28 @@ In the \gls{caes} the excitation laser is resonant to the D2 transition of the t
 \label{fig:field_ionisation}
 \end{figure}
 
-The cold electrons are then accelerated with an electric field and steered with a number of magnetic devices through the sample and onto the detector.
+The cold electrons are then accelerated with an electric field and steered with a number of devices through the sample and onto the detector.
 
 \section{Optical Dipole Traps}
 
-The following derivation of the dipole potential and scattering rate for \gls{odt} follows the one presented in Grimm and Weidem\"uller\cite{grimm_optical_2000}.
+The following derivation of the dipole potential and scattering rate for \gls{odt} follows the one presented by Grimm and Weidem\"uller\cite{grimm_optical_2000}.
 
-An electric field, $\emph{E}$, from laser light of frequency $\omega$ will induce an atomic dipole moment $\boldsymbol{p}$ in an atom placed within the light field. Using standard complex notation we can write,
+An electric field, $\emph{E}$, from a laser of frequency $\omega$ will induce an atomic dipole moment, $\boldsymbol{p}$, in an atom placed within the light field. Using standard complex notation we can write,
 
 \begin{equation}\label{eq:efield}
-\boldsymbol E (\boldsymbol r ,t)=\hat{\boldsymbol e} \tilde E (\boldsymbol r) \exp{-i\omega t + c.c.}
+\boldsymbol E (\boldsymbol r ,t)=\hat{\boldsymbol e} \tilde E (\boldsymbol r) \exp(-i\omega t) + c.c.
 \end{equation}
 where $\hat{\boldsymbol{e}}$ is the polarisation unit vector. The amplitude of the dipole moment, $\tilde p$, is related to the electric field amplitude, $\tilde E$, by
 \begin{equation}\label{eq:polarisability}
 \tilde p = \alpha \tilde E.
 \end{equation}
-$\alpha$ depends on the driving frequency, $\omega$ and is called the complex polarisability.
+$\alpha$ depends on the driving frequency, $\omega$, and is called the complex polarisability.
 
-The induced dipole moment, $\boldsymbol p$ has an interaction potential with the electric field, $\boldsymbol E$ given by
+The induced dipole moment, $\boldsymbol p$, has an interaction potential with the electric field, $\boldsymbol E$ given by
 \begin{equation}\label{eq:interaction_pot}
 U_{dip} = - \frac{1}{2} \langle \boldsymbol{pE} \rangle = - \frac{1}{2 \epsilon_0 c} Re(\alpha)I,
 \end{equation}
-where the time average over the rapidly oscillating terms is indicated by the angle brackets, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $\frac{1}{2}$ takes the the induced nature of the dipole moment in account. The dipole force results from the gradient of the interaction potential
+where the time average over the rapidly oscillating terms is indicated by the angle brackets, the field intensity is $I=2\epsilon_0 c |\tilde E|^2$ and the $\frac{1}{2}$ takes the the induced nature of the dipole moment in account. The dipole force resulting from the gradient of the interaction potential is
 \begin{equation}\label{eq:dipole_force}
 \boldsymbol F_{dip}(\boldsymbol r ) = - \nabla U_{dip}(\boldsymbol r) = \frac{1}{2 \epsilon_0 c} Re(\alpha) \nabla I(\boldsymbol r).
 \end{equation}
@@ -156,7 +155,7 @@ The complex part of the polarisability gives the out of phase component of the d
 
 \subsection{Atomic Polarisability}
 
-The atomic polarisability, $\alpha$ can be calculated by using Lorentz's model for a classical oscillator. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bounds to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
+The atomic polarisability, $\alpha$ can be calculated by using Lorentz's model for a classical oscillator. In this picture an electron with mass $m_e$ and charge $e$ is considered to be bound to the core elastically with an oscillation frequency $\omega_0$ which corresponds to the optical transition frequency.
 
 The polarisability can be calculated if the equation of motion, $\ddot{x} + \gamma \dot{x} + \omega_0^2 x = -eE(t)/m_e$, is integrated for the driven oscillation of the electron to give
 \begin{equation} \label{eq:polarisability}
@@ -185,7 +184,7 @@ and
 \Gamma_{sc} = \frac{3\pi c^2}{2\hbar\omega_0^3} \left(\frac{\omega}{\omega_0}\right)^3 \left(\frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0+\omega}\right)^2 I(\boldsymbol r).
 \end{equation}
 
-Most experiments are performed with $\omega$ relatively close to the resonance, $\omega_0$. In this case the detuning $\Delta\equiv \omega - \omega_0 \ll \omega_0$. Here we can make the rotating wave approximation and set $\omega/\omega_0\approx 1$. The equations above simplify to
+Most experiments are performed with value of $\omega$ relatively close to that of the resonance, $\omega_0$. In this case the detuning $\Delta\equiv \omega - \omega_0 \ll \omega_0$. Here we can make the rotating wave approximation and set $\omega/\omega_0\approx 1$. The equations above simplify to
 
 \begin{equation}\label{eq:simple_potential}
 U_{dip}(\boldsymbol{r}) = \frac{3\pi c^2}{2 \omega_0^3} \frac{\Gamma}{\Delta} I(\boldsymbol{r}),
@@ -203,7 +202,7 @@ As previously mentioned Gaussian beams are used for red-detuned \glspl{odt}. A G
 \begin{equation}
 I(r, z) = I_0 \left( \frac{w_0}{w(z)}\right)^2 e^{-2r^2/w(z)^2}
 \end{equation}
-where $I_0$ is the intensity at the centre of the focal point, $w_0$ is the beam waist at the focus and the beam waist $w(z)$ is
+where $I_0$ is the intensity at the centre of the focal point, $w_0$ is the beam waist at the focus and the beam waist, $w(z)$, is given by
 \begin{equation}
 w(z) = w_0\sqrt{1 + \left(\frac{z}{z_0} \right)^2}.
 \end{equation}
@@ -235,10 +234,10 @@ z_0 = \frac{\pi w_0^2}{\lambda}.
     \end{scope}
 \end{tikzpicture}
 
-\caption{Gaussian beam width, $w(z)$, along the beam propagation axis, $z$. $w_0$ is the beam waist, $z_0$ is the Rayleigh length.}
+\caption{Gaussian beam width $w(z)$ along the beam propagation axis, $z$. $w_0$ is the beam waist and $z_0$ is the Rayleigh length.}
 \end{figure}
 
-These equations can be used to simulate an \gls{odt}. Using the light sources similar to those described in chapter 3 we can create generate the potential depicted in figure \ref{fig:dipolepotential}. The potential has been converted to an effective temperature, $T_{eff}$ using
+These equations can be used to simulate an \gls{odt}. Using a light source with parameters similar to the one described in chapter 3 we can create generate the potential depicted in figure \ref{fig:dipolepotential}. The potential has been converted to an effective temperature, $T_{eff}$, using
 \begin{equation}
 T_{eff}(r, z) = \frac{2}{3 k_B} U(r, z)
 \end{equation}
@@ -247,23 +246,20 @@ where $U$ is the potential and $k_B$ is Boltzmann's constant.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=18cm]{figs/dipolepotential.pdf}
-\caption{The effective temperature of a single beam optical dipole trap is depicted here. The total power of the simulated beam is 500mW with a detuning of 2nm red of the 85Rb D2 resonance and a beam waist of 250$\mu$m. The top graph shows a cross section through the centre of the beam (note that the scale and units on each axis are different). The graph on the bottom left shows the effective temperature along the r=0 axis and the graph on the right shows the temperature along the z=0 axis.}
+\caption{The effective temperature of a single beam optical dipole trap is depicted here. The total power of the simulated beam is $500\,\unit{mW}$ with a detuning of $2\,\unit{nm}$ red of the $^{85}$Rb D2 resonance and a beam waist of $250\,\unit{\mu m}$. The top graph shows a cross section through the centre of the beam (note that the scale and units on each axis are different). The graph on the bottom left shows the effective temperature along the $r=0$ axis and the graph on the right shows the temperature along the $z=0$ axis.}
 \label{fig:dipolepotential}
 \end{figure}
 
-{\color{red} Still need to talk about how these equations make a trap as well as some theoretical numbers}
+\subsection{Trap Lifetime}
+The lifetime of an \gls{odt} is an important measure especially for \gls{bec} experiments. In such experiments lifetimes of seconds are routinely acquired\cite{cennini_bose-einstein_2003, kuppens_loading_2000}.
 
-\subsection{lifetime}
-
-{\color{red} hmmm what to do here....
-
-Lifetime probably obeys the following equation,
+A simple model of the number of atoms in a trap over time, $N(t)$, can be expressed as
 \begin{equation}
 N(t) = N_0 e^{-\lambda t}
 \end{equation}
 where $N_0$ is the number of atoms at time $t=0$ and $\lambda$ is the decay rate.
-}
 
+The population of the trap over time is dependent on the detuning, laser power and background pressure and more complicated models incorporate this.
 
 \subsection{Configuration}
 
@@ -316,26 +312,25 @@ Single beam traps have strong confinement in the direction perpendicular to beam
 \end{tikzpicture}
 \caption{A crossed beam optical dipole trap.}
 \end{subfigure}
-\caption{Example configurations of optical dipole traps.}
 \end{figure}
 
-\subsection{Simulation}
+Good trapping in all directions is required for the \gls{caes} so a crossed beam setup has been used.
 
-{\color{red}Need to include some more graphs showing how the trap parameters were selected.}
+{\color{red}Need to include some more showing how the trap parameters were selected.}
 
 \subsection{Gaussian Beam Optics}
 
-Gaussian beam incident on lens, waist size etc.
+{\color{red} time and space permitting - Gaussian beam incident on lens, waist size etc.}
 
 \section{Imaging}
 
 In order to determine the spatial distribution of the atoms at a given time techniques for imaging are required. Numerous techniques for imaging are available the simplest of which are fluorescence and absorption imaging.
 
-Some imaging methods are able to generate images of the atoms under examination without strong interactions that interfere with the atoms' state. These methods are known as non-destructive. Destructive methods on the otherhand will distrupt the atoms to varying degrees.
+Some imaging methods are able to generate images of the atoms under examination without strong interactions that interfere with the state of the atoms. These methods are known as non-destructive. Destructive methods on the otherhand will distrupt the atoms to varying degrees.
 
 \subsection{Fluorescence Imaging}
 
-Near resonant light passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scattered photons can be easily detected and images of the scattered photons can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method.
+Resonant or near-resonant photons passing through atom clouds (such as the optical molasses lasers in a \gls{mot} or a specific probe beam) will be absorbed and re-emitted in a random direction. These scattered photons can be easily detected and images can be easily produced. This method is easy to do and has the advantage that imaging can be done on any axis. The signal is rather weak however since the scattered photons are equally distributed in all directions so only a small portion will reach the detector which can make precise imaging more difficult. Due to the strong interaction of the laser light with the atoms this is a destructive imaging method. Atoms trapped in a \gls{mot} also fluoresce due to the trapping lasers and this can be passively observed.
 
 \begin{figure}[h]
 \centering
@@ -386,19 +381,22 @@ Near resonant light passing through atom clouds (such as the optical molasses la
         \shade[ball color=brown] (0.00, 0.25) circle (0.1);
     \end{scope}
 \end{tikzpicture}
-\caption{This diagram shows fluorescence imaging. Light from the on-resonance probe beam is absorbed by the atoms and then reemitted in all directions as fluorescence. This light is captured by the detector.}
+\caption{In fluorescence imaging light from the on-resonance probe beam is absorbed by the atoms and then reemitted in all directions as fluorescence. This light is captured by the detector.}
 \end{figure}
-
-Fluorescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the fluorescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from fluorescence imaging will not be detectable.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.3\textwidth]{figs/fluorescence.pdf}
 \caption{A short exposure fluorescence image of the CAES MOT.}
 \end{figure}
+
+Fluorescence imaging is very easy to accomplish with the Melbourne \gls{caes} when used to view the \gls{mot} due to the fluorescence from the cooling lasers. However it is not practical for use with atoms trapped in an \gls{odt} since with the significantly reduced atom count the signal from fluorescence imaging would be difficult to detect.
+
+{\color{red} put the two fluorescence images next to each other as subfigures}
+
 \subsection{Absorption Imaging}
 
-Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. In absorption imaging a collimated probe laser is directed through the atoms and onto the detector. As in fluorescence imaging the photons will be absorbed and reemitted in random directions. After the light has passed through the atoms a `shadow' due to the photons absorbed by the atoms will be left in the probe beam.
+Absorption imaging is another destructive imaging method that makes use of an on-resonance probe laser. A collimated probe laser is directed through the atoms and onto the detector. The photons will be absorbed and reemitted in random directions. After the light has passed through the atoms a `shadow' due to the photon absorbtion by the atoms will be left in the probe beam. The `shadow' is used to create an absorption image.
 
 \begin{figure}[h]
 \centering
@@ -434,12 +432,10 @@ Absorption imaging is another destructive imaging method that makes use of an on
 
     \end{scope}
 \end{tikzpicture}
-\caption{This diagram shows absorption imaging. The on-resonance probe beam propagating from left to right passes through the atom cloud. The atoms absorb some of the light and the shadow is visible on the detector.}
+\caption{The on-resonance probe beam propagating from left to right passes through the atom cloud. The atoms absorb some of the light and the shadow is visible on the detector.}
 \end{figure}
 
-The signal from absorption imaging is much stronger than that for fluorescence however it is not possible to get quantitative information for dense clouds of atoms due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
-
-The strong interaction between the laser and the atoms means that with a `fragile' trap this imaging technique will give many of the atoms enough energy to escape the trap.
+The signal from absorption imaging is much stronger than that for fluorescence. With dense atom clouds however it is not possible to get quantitative information due to the exponential drop in transmission\cite{moravchik_imaging_2009}. This is not a problem for the atoms trapped in the \gls{caes} since no compression is currently being used on the \gls{mot} or \gls{odt}.
 
 \begin{figure}[h]
 \centering
@@ -458,13 +454,13 @@ I = T I_0.
 Each point in $T$ corresponds to the integrated column density of the atoms in the cloud at that point and this information can be used to determine a number of different metrics such as the temperature of the atoms and the total number of atoms.
 
 \subsection{MOT Temperature}
-An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution whose two dimensional density can be modelled by
+An atomic distribution in an ideal \gls{mot} atom cloud should be a Gaussian distribution. The two dimensional density can be described by
 \begin{equation}\label{eq:gaussian_density}
 \rho (x, y) = \rho_0\exp\left(\frac{x^2}{\sigma_x^2} + \frac{y^2}{\sigma_y^2}\right)
 \end{equation}
-where $\rho_0$ is the central density and $\sigma_x$ and $\sigma_y$ are the 1/e radii of the distribution.
+where $\rho_0$ is the central density and $\sigma_x$ and $\sigma_y$ are the 1/e radii of the distribution. This assumes that any ellipticity is aligned with the $x$ and $y$ axes.
 
-If the trapping lasers and magnetic fields are turned off the atom-cloud should begin to expand thermally. The r.m.s thermal velocity, $v_0$, is related to the temperature of the cloud, $T$, via \cite{sheludko_shaped_2010}
+If the trapping lasers and magnetic fields are turned off the atom-cloud begins to expand thermally. The r.m.s thermal velocity, $v_0$, is related to the temperature of the cloud, $T$, via \cite{sheludko_shaped_2010}
 \begin{equation}\label{eq:temp_velocity}
 v_0 = \sqrt{\frac{2k_BT}{m_{Rb}}}
 \end{equation}
@@ -474,7 +470,7 @@ r(t) = \sqrt{r_0^2 + (v_0t)^2}.
 \end{equation}
 Here $r_0$ is the initial 1/e radius of the cloud.
 
-The temperature can be calculated by taking a number of absorption images for various values of $t$ and then fitting each of the atomic distributions to equation \ref{eq:gaussian_density}. The various cloud radii can then be fitted to equation \ref{eq:cloud_radius} and a temperature can then be calculated with equation \ref{eq:temp_velocity}.
+The temperature can be calculated by taking a number of absorption images for various values of $t$ and then fitting each of the atomic distributions to equation \ref{eq:gaussian_density}. The various cloud radii can be fitted to equation \ref{eq:cloud_radius} and a temperature can be calculated with equation \ref{eq:temp_velocity}.
 
 \subsection{Atom Count}
 
@@ -505,7 +501,7 @@ Practically $I$, $I_0$ and $D(x, y)$ will be two dimensional arrays of pixels, s
 \begin{equation}\label{eq:atom_sum}
 N = \sum_{(x, y)} \frac{1}{\sigma}D(x, y)A_{pixel}
 \end{equation}
-where $A_{pixel}$ is the scaled area of the a pixel.
+where $A_{pixel}$ is the scaled area of the a pixel. Here `scaled' implies that the magnification of the optical system has been taken into account.
 
 The absorption cross-section is given by \cite{steck_rubidium_2001},
 \begin{equation}\label{eq:cross_section}
@@ -532,7 +528,9 @@ There are a number of other imaging techniques that can be used to image cold-at
 
 \section{Stability of the Electron Signal}
 
-The stability of the electron signal incident on the detector can be analysed fairly simple. For a given iteration, $i$, of the experiment the electron signal will have an average spatial centre given by
+{\color{red} never got around to doing this... remove this section?}
+
+The stability of the electron signal incident on the detector can be analysed fairly simply. For a given iteration, $i$, of the experiment the electron signal will have an average spatial centre given by
 \begin{equation}\label{eq:weight_average_spatial}
 \boldsymbol{x}_i = \frac{1}{\sum c(p)} \sum c(p) \boldsymbol x(p)
 \end{equation}

@@ -78,10 +78,46 @@ The \gls{caes} has the ability to create shaped electron bunches. This is done b
 text
     \subsection{Beam Steering and Focussing}
 text
-    \subsection{magnetic tentacle monster}
-text
+
     \subsection{Detector}
 text
+
+\section{Electron Beam Steering}
+At the start of this project the steering of the electron beam through the new sample chamber and onto the detector was being achieved with a large iron permanent magnetic. As a side project a quadrupole magnetic steering device was designed and constructed to allow more precise and repeatable control over the electron beam.
+
+In order to get an idea of the strength of magnetic field required for this device the magnetic terrain outside the electron path was measured with a Hall probe. The field was found to vary considerably around the steel vacuum system, mechanincal and electrical mechanical devices. It was possible however to determine the approximate strength of field that the steering device would have to deal with. The magnetic field around the electron path has an average of $0.68\,\unit{G}$ and a standard deviation of $0.57\,\unit{G}$.
+
+In order to control the electron trajectories steering on both axes is required. and the simplest way to achieve this is with two pairs of current carrying wires as shown in figure \ref{fig:mag_steering}. Realistically instead of using single wires bundles of wires will be used. The magnetic field at the midpoint between a pair of wire bundles, each with $n$ wires, is
+\begin{equation}
+B=\frac{2n\mu_0I}{\pi d}
+\end{equation}
+where $\mu_0$ is the permeability of free space, $I$ is the current in the wire and $d$ is the distance between the two wires.
+
+The is possible to put the bundles of wires $70\,\unit{mm}$ from the centre of the vacuum system. Using a reasonable current of $0.5\,\unit{A}$ and generating a field equal to the average magnetic field of $0.68\,\unit{G}$ would require $23.8$ wires in each of the wire bundles.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+    \begin{scope}[scale=0.75]
+        \draw[dotted] (0,0) circle (3.535);
+        \draw (0,0) -- node[below] {r$=70\,\unit{mm}$} (-3.535, 0);
+
+        \filldraw[fill=blue] (0,0) circle (0.5) node[above=0.3] {Electron path};
+
+        \filldraw[fill=red] (2.5, 2.5) node[white] {\LARGE B} circle (0.75);
+        \filldraw[fill=black] (-2.5, -2.5) node[white] {\LARGE B} circle (0.75);
+        \filldraw[fill=red] (-2.5, 2.5) node[white] {\LARGE A} circle (0.75);
+        \filldraw[fill=black] (2.5, -2.5) node[white] {\LARGE A} circle (0.75);
+    \end{scope}
+\end{tikzpicture}
+\caption{Two pairs of current carrying wires (A and B) used to steer the electrons which are directed into the page. The current in the red wires is in the opposite direction to that in the black wires.}
+\label{fig:mag_steering}
+\end{figure}
+
+Two pairs of steering coils, each with 25 turns, were constructed to implement this design. Each pair of wire bundles in joined together and to the power supply well away from the vacuum system to avoid disturbing the magnetic steering. The coils are mounted onto the vacuum system using plastic collars that were created by the department's workshop and the wires were confined in $20\,\unit{mm}$ electrical conduit.
+
+Typical currents that are sufficient to steer the electrons onto the detector are for one axis $1.76\,\unit{A}$ and $1.52\,\unit{A}$ for the other. These values are much higher that the estimated but well within the capabilities of the device.
+
 \section{Optical Dipole Trap}
 
 The design of the \gls{odt} began in 2011 and the first trapping was observed in late 2012.
@@ -250,10 +286,12 @@ In the imaging step the imaging laser is turned on and camera is triggered. It i
     \draw (9.8, -0.5) node {Loading MOT};
     \end{scope}
 \end{tikzpicture}
-\caption{{\color{red}another caption}}
+\caption{The experimental sequence used to examine the ODT.}
 \label{fig:sequence}
 \end{figure}
 
 Another important consideration is the delay between a change in a control signal and response from a device (such as a laser, magnetic coil or camera). Lasers that are controlled with \glspl{aom} have a very fast repsonse time {\color{red} how fast? citation?}. The response time of the AVT camera has not been measured however it is significantly less than the usual exposure times of the camera (typically $30-100\,\unit{\mu s}$). The response times of the mechanical shutters used on the Zeeman slower and \gls{odt} however are significant.
 
 The response times of the shutters can easily be measured by using a photodiode to compare the amount of light transmitting through the shutters with the signal controlling the shutter. {\color{red} should I meantion that this isn't my work? it was done by Paul and Rory} This method has shown that the response time of the Zeeman slower's shutter is $4.6\,\unit{ms}$ and the \gls{odt}'s shutter is $6.2\,\unit{ms}$. It is important to take these values into account when scheduling the timing of the experiment.
+
+{\color{red} perhaps mention the apparent `blue trapping' we had when the trapping laser was acting as a repump}
