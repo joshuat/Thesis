@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[12pt]{report}
 
 \usepackage[colorlinks=true,linkcolor=black,citecolor=blue,pdfusetitle,pagebackref=true]{hyperref}
 \usepackage{cite}
@@ -22,7 +22,7 @@
 \usepackage{lscape}
 
 \usepackage{setspace}
-\setstretch{1.2}
+\setstretch{1.1}
 
 \addtolength{\textheight}{2cm}
 
@@ -30,9 +30,24 @@
 	calc,%
 	decorations.pathmorphing,%
 	fadings,%
-	shadings%
+	shadings,
+    arrows%
 }
 %\renewcommand*{\familydefault}{\sfdefault}
+
+\RequirePackage[hyperpageref]{backref}
+   \renewcommand*{\backref}[1]{}  
+   \renewcommand*{\backrefalt}[4]{
+      \ifcase #1
+         No cited.
+      \or
+         Cited on page #2.
+      \else
+         Cited on pages #2.
+      \fi}
+
+\bibliographystyle{unsrt}
+\renewcommand\bibname{References}
 
 \pdfinfo{ % This just add some details to the file metadata
     /Title (Use of an Optical Dipole Trap in a Cold-atom Electron Source)
@@ -53,14 +68,14 @@
 \pagenumbering{gobble}  % so the title page isn't numbered
 %\maketitle
 
-
 %%% Title page %%%
 \renewcommand{\footnotesize}{\small}
 \renewcommand{\footnoterule}{\relax}
 \thispagestyle{empty}
 \begin{center}
-    { \Huge {\bfseries {Use of an Optical Dipole Trap in a Cold-atom Electron Source}} \par}
-{\large \vspace*{35mm} {{\includegraphics[width=4cm]{figs/ackbar.jpg}} \par} \vspace*{15mm}}
+    {{{\includegraphics[width=4cm]{figs/unimelb.png}} \par}
+ \Huge {\bfseries {Use of an Optical Dipole Trap in a Cold-atom Electron Source}} \par}
+{\large \vspace*{35mm} \vspace*{15mm}}
     {{\vspace*{25mm} \Large {Joshua Torrance}} \par} 
 {\large 
     \vspace*{1ex}
@@ -90,18 +105,21 @@
 
 %%% Chapters %%%
 \include{1_intro/intro}
+\glsresetall
 %\include{2_motivation/motivation}
 \include{3_theory/theory}
+\glsresetall
 \include{4_setup/setup}
+\glsresetall
 \include{5_results/results}
+\glsresetall
 \include{6_conclusion/conclusion}
 
 \twocolumn
 \printglossaries
 \onecolumn
 
-\bibliography{bib}{}
-\bibliographystyle{unsrt}
+\bibliography{bib}
 
 
 \end{document}
