@@ -16,11 +16,11 @@ The development of new imaging techniques, such as ultrafast single shot diffrac
 
 \subsection{Ultrafast, single-shot, coherent diffractive imaging with electrons}
 
-X-ray diffraction from crystals was first observed a century ago\cite{bragg_x-rays_1912} and resulted in a Nobel prize being awarded to William Bragg and his son, William Bragg. Since then a number of imaging techniques have been developed such as \gls{cdi}. \Gls{cdi} has been performed on a myriad of different samples with coherent beams of x-rays and electrons.
+X-ray diffraction from crystals was first observed a century ago\cite{bragg_x-rays_1912} and resulted in a Nobel prize being awarded to William Henry Bragg and his son, William Lawrence Bragg. Since then a number of imaging techniques, such as \gls{cdi}, have been developed. \Gls{cdi} has been performed on a myriad of different samples with coherent beams of x-rays and electrons.
 
 Ultrafast, single-shot imaging requires a very bright source of radiation in order to provide enough scattered information on the detector before the sample is damaged by the illumination\cite{henderson_potential_1995}. Single-shot imaging with a sufficiently bright source and a short enough interaction time would be able to image protein molecules, and other bio-molecules, without the need for crystallisation\cite{neutze_potential_2000}.
 
-With femtosecond timescale single-shot imaging it is possible to observe dynamical systems such as molecular vibration and chemical reactions\cite{zewail_4d_2006}. With the sophisticated imaging techniques currently in development around the world and the continued improvement of radiation sources it will become possible to create `molecular movies'\cite{dwyer_femtosecond_2006} of these processes. Unfortunately, the brightnesses required for single shot imaging with electrons requires multi-billion-dollar \gls{xfel} facilities.
+With femtosecond timescale single-shot imaging it is possible to observe dynamical systems such as molecular vibration and chemical reactions\cite{zewail_4d_2006}. With the sophisticated imaging techniques currently in development around the world and the continued improvement of radiation sources it will become possible to create `molecular movies'\cite{dwyer_femtosecond_2006} of these processes. Unfortunately, the brightnesses required for single shot imaging with x-rays requires multi-billion-dollar \gls{xfel} facilities.
 
 Electron sources however may be able to provide a cheaper alternative. Electron interactions with molecules are significantly stronger than those of x-rays. For similar energies the electron interaction with a sample is $10^5-10^6$ times stronger than that of x-rays\cite{sciaini_femtosecond_2011}. This means that while a huge facility is required to generate x-ray light of sufficient brightness a table-top source of electrons may be sufficient for ultrafast \gls{cdi}.
 
@@ -28,7 +28,7 @@ Electron sources however may be able to provide a cheaper alternative. Electron 
 \begin{equation}
 L_c = \hbar/\sqrt{m_e k_B T}.
 \end{equation}
-where $m_e$ is the mass of an electron and $T$ is the temperature of the electrons. The problem with conventional electron sources (such as electron guns, photocathode sources and field emission sources) is the temperature of the electrons produced. Most electron sources produce electrons with high temperatures which results in low coherence lengths and are thus not appropriate for \gls{cdi}. However the procedure used in the \gls{caes} results in low temperature electron bunches which are potentially suitable for \gls{cdi}. The \gls{caes} also provides the ability to mitigate expansion due to space charge effects with electron bunch shaping\cite{mcculloch_arbitrarily_2011}.
+where $m_e$ is the mass of an electron and $T$ is the temperature of the electrons. The problem with conventional electron sources (such as electron guns, photocathode sources and field emission sources) is the temperature of the electrons produced. Most electron sources produce electrons with high temperatures which results in low coherence lengths and are thus not appropriate for \gls{cdi}. However the procedure used in the \gls{caes} results in low temperature electron bunches which are suitable for \gls{cdi}. The \gls{caes} also provides the ability to mitigate expansion due to space charge effects with electron bunch shaping\cite{mcculloch_arbitrarily_2011}.
 
 The Melbourne optics group has recently shown that \gls{cdi} with electrons is possible, using a conventional electron microscope\cite{putkunz_atom-scale_2012}. The electron currents used are unfortunately too small for single-shot imaging.
 
@@ -36,27 +36,25 @@ The Melbourne optics group has recently shown that \gls{cdi} with electrons is p
 
 If bright, coherent, femtosecond long bunches of electrons can be produced from the Melbourne \gls{caes} then \gls{cdi} can be performed on a range of structures and eventually molecules.
 
-In order to produce electrons in the \gls{caes} Rubidium atoms are cooled and trapped in a retro-reflective \gls{mot} that is loaded from a Zeeman slower\cite{phillips_laser_1982, phillips_cooling_1987, bell_slow_2010}. The valence electrons of the trapped atoms are then ionised using a two-stage ionisation process.
-
-The ionisation process is tuned such that the electrons are given the minimum energy required to ionise ensuring that the electrons are `cold' (approximately $10\,\unit{K}$\cite{mcculloch_arbitrarily_2011}).
+In order to produce electrons in the \gls{caes} rubidium atoms are cooled and trapped in a retro-reflective \gls{mot} that is loaded from a Zeeman slower\cite{phillips_laser_1982, phillips_cooling_1987, bell_slow_2010}. The valence electrons of the trapped atoms are then ionised using a two-stage ionisation process. The ionisation process is tuned such that the electrons are given the minimum energy required to ionise ensuring that the electrons are `cold' (approximately $10\,\unit{K}$\cite{mcculloch_arbitrarily_2011}).
 
 The cold electrons are accelerated out of the cloud by a uniform electric field generated by charged parallel plates, guided to the neighbouring sample chamber and focused onto the target sample. After passing through the sample the resulting diffraction pattern is recorded with an imaging detector and can then be used to determine the structure of the sample using standard \gls{cdi} inversion techniques.
 
-During the ionisation and acceleration stage the magnetic and optical trapping must be turned off. The optical trapping interferes with the ionisation stage and the magnetic trapping would have extremely strong effects on the electron trajectories due to the low mass of the electrons. This means that, during these phases, the atom cloud is no longer trapped and begins to undergo thermal expansion and fall due to gravity.
+During the ionisation and acceleration stage the magnetic and optical trapping must be turned off. The optical trapping interferes with the ionisation stage and the magnetic trapping would have extremely strong effects on the electron trajectories due to the low mass of the electrons. This means that during these phases, the atom cloud is no longer trapped and begins to undergo thermal expansion and fall due to gravity.
 
 This cycle of trapping, ionisation, acceleration and imaging occurs with a frequency of $10\,\unit{Hz}$ during normal operation.
 
 \section{Stability of the cold-atom electron source}
 
-In its current state the \gls{caes} suffers from a number of technical issues that are preventing the observation of diffraction through samples. One of these issues is the instability of the position of the electron signal on the detector which is due to the instability of the atom cloud. Variations in the magnetic environment as well as the long turn-off time of the magnetic trapping could also be interfering with the electron trajectories.
+In its current state the \gls{caes} suffers from a number of technical issues that are preventing the observation of diffraction through samples. One of these issues is the instability of the position of the electron signal on the detector which is due to the instability of the atom cloud and the long turn-off time of the magnetic trapping which interferes with the electron trajectories.
 
-During the standard $10\,\unit{Hz}$ cycle the atom cloud formed by the \gls{mot} has approximately $93\,\unit{ms}$ to fill which does not provide enough time for the trap to saturate. The distribution of the atoms within the cloud therefore varies from cycle to cycle. The atom distribution also varies during a single cycle as atoms `slosh' within the trap. These issues are exacerbated when the trapping is turned off and the cloud begins to fall and expand.
+During the standard $10\,\unit{Hz}$ cycle the atom cloud formed by the \gls{mot} has approximately $93\,\unit{ms}$ to fill. This does not provide enough time for the trap to saturate and the distribution of the atoms within the cloud varies from cycle to cycle as a result. The atom distribution also varies during a single cycle as atoms `slosh' within the trap. These issues are exacerbated when the trapping is turned off and the cloud begins to fall and expand.
 
 This instability in the distribution of the atoms results in instability in the initial distribution of the electrons. This is apparent on the detector as shot-to-shot variations in the position of the electron beam. Mitigating this instability would allow averaging of many shots to improve the signal to niose ratio and determine diffraction to higher order, thus increasing the imaging resolution.
 
 \section{Optical dipole traps}
 
-\Glspl{odt} may prove to be the solution to this stability problem. An \gls{odt} consists of a focused, Gaussian laser beam that is detuned from the atomic resonances of the target atomic species. The atoms will feel a force towards the high intensity regions of the laser that is, towards the centre of the beam and the focus.
+\Glspl{odt} may prove to be the solution to this stability problem. An \gls{odt} consists of a focused, Gaussian laser beam that is detuned from the atomic resonances of the target atomic species. The atoms feel a force towards the high intensity regions of the laser that is, towards the centre of the beam and the focus.
 
 \subsection{History of optical dipole trapping}
 The use of the optical dipole force as a confining mechanism was first proposed by Askar'yan in 1962\cite{askaryan_effects_1962} for plasmas and neutral atoms. Ashkin successfully demonstrated the trapping of micron-size latex spheres suspended in water using a focused Gaussian lasers in 1970\cite{ashkin_acceleration_1970}. The first optical trapping of atoms was demonstrated by Chu et al. in 1986\cite{chu_experimental_1986} where an \gls{odt} was used to trap sodium atoms.
@@ -65,7 +63,7 @@ Since then \glspl{odt} have been used extensively in atom optics and have proven
 
 \subsection{Optical dipole traps in the cold-atom electron source}
 
-The main advantage of \gls{odt} for the \gls{caes} is trapping without magnetic fields or on-resonance lasers. This means that the atom-cloud can remain trapped during the ionisation and acceleration phases of electron generation. This should reduce the current instability in the electron beam path.
+The main advantage of \gls{odt} for the \gls{caes} is trapping without magnetic fields or on-resonance lasers. This means that the atom-cloud can remain trapped during the ionisation and acceleration phases of electron generation. This should reduce the instability in the electron beam path.
 
 \Gls{odt} also provide the opportunity to experiment with other techniques such as evaporative cooling to compress the atom-cloud and optical lattices\cite{fallani_bose-einstein_2005} to counter disorder induced heating\cite{gericke_disorder-induced_2003}.
 
@@ -76,7 +74,7 @@ The main advantage of \gls{odt} for the \gls{caes} is trapping without magnetic 
     \item Ideally the size of the trap would encompass the entire \gls{mot} however this is impractical due to the limitations in the laser power available. The minimum size of the trap should be the size of the excitation region which is of order $500\,\unit{\mu m}$\cite{mcculloch_towards_2012}.
 \end{itemize}
 
-Two light sources were considered for the production of the \gls{odt}. The first is a $780\,\unit{nm}$ \gls{ecdl} seeded \gls{ta} at a wavelength around $781\,\unit{nm}$ with an applicable power of $500\,\unit{mW}$. The second is a $1064\,\unit{nm}$, $20\,\unit{W}$ fibre laser.
+Two light sources were considered for the production of the \gls{odt}. The first is a $780\,\unit{nm}$ \gls{ecdl} seeded \gls{ta} tuned to a wavelength around $781\,\unit{nm}$ with an applicable power of $700\,\unit{mW}$. The second is a $1064\,\unit{nm}$, $20\,\unit{W}$ fibre laser.
 
 The majority of modern \glspl{odt} use light sources similar to the $1064\,\unit{nm}$ $20\,\unit{W}$ fibre laser taking advantage of the extremely low scattering rates to get long lifetimes. The \gls{caes} however only requires the \gls{odt} for a few milliseconds so using the light source that is close to the atomic resonances may prove to be the better option.
 
